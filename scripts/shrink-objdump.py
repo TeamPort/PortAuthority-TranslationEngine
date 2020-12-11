@@ -10,7 +10,7 @@ def findInstruction(line):
     for part in parts:
         try:
             int(part, 16)
-            if(part == 'add'):
+            if(part == 'add' or part == 'b' or part == 'fadd'):
                 instruction = part.upper() + " "
                 break
         except:
@@ -60,16 +60,7 @@ def main(argv):
                 if(lines[j].find('Disassembly of') != -1 or lines[j] == ''):
                     j+=1
                     continue
-                parts = lines[j].split()
-                parts = parts[1:]
-                for part in parts:
-                    try:
-                        int(part, 16)
-                        if(part == 'add' or part == 'b'):
-                            break
-                    except:
-                        break
-                sentence += part.upper() + " "
+                sentence += findInstruction(lines[j])
                 j+=1
         else:
             sentence += function + " "
