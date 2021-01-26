@@ -55,10 +55,17 @@ public class Correlate
             for(Int32 i = 0; i < count-1; i++)
             {
                 Tuple<String, float> sub = entry.Value[i] as Tuple<String, float>;
-                Console.WriteLine("    \"" + sub.Item1 + "\":" + (sub.Item2/totals[entry.Key]).ToString("0.00") + ",");
+                float percentage = sub.Item2/totals[entry.Key];
+                if(percentage > 0.009f)
+                {
+                    Console.WriteLine("    \"" + sub.Item1 + "\":" + (percentage*100).ToString("0.") + ",");
+                }
             }
             Tuple<String, float> final = entry.Value[count-1] as Tuple<String, float>;
-            Console.WriteLine("    \"" + final.Item1 + "\":" + (final.Item2/totals[entry.Key]).ToString("0.00"));
+            if(final.Item2/totals[entry.Key] > 0.009f)
+            {
+                Console.WriteLine("    \"" + final.Item1 + "\":" + ((final.Item2/totals[entry.Key])*100).ToString("0."));
+            }
             Console.WriteLine("  },"); // TODO Last entry should not have a comma
         }
         Console.WriteLine("}");
