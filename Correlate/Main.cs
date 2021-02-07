@@ -81,7 +81,7 @@ public class Correlate
         }
     }
 
-    private static void parseFile(String file)
+    private static float parseFile(String file)
     {
         var found = new Dictionary<String, Int32>();
 
@@ -132,12 +132,18 @@ public class Correlate
             }
         }
         Console.WriteLine("}");
+
+        return total;
     }
 
     private static void popularity(String file1, String file2)
     {
-        parseFile(file1);
-        parseFile(file2);
+        float total1 = parseFile(file1);
+        float total2 = parseFile(file2);
+
+        Console.WriteLine();
+        float ratio = total2/total1;
+        Console.WriteLine(ratio);
     }
 
     private static Dictionary<String, Int32> ngrams(String file1, String file2, Int32 grams)
