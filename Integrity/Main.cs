@@ -1,37 +1,62 @@
 using System;
 using System.IO;
 using System.IO.Compression;
+using System.Threading;
 using System.Web.Script.Serialization;
 
 public class Program
 {
-    public class Instruction
+    private class Parameters
     {
-        public UInt64 a;
-        public Int32 o;
-        public String m;
+        public FileInfo info;
+        public bool synthetic;
     }
 
-    public class Data
-    {
-        public String triple;
-        public Int32 size;
-        public Instruction[] run;
-    }
+    private static Data gBinary;
+    private static Data gSynthetic;
 
     public static void Main(String[] Args)
     {
-        FileInfo info = new FileInfo(Args[0]);
-        String path = Decompress(info);
+        FileInfo x86 = new FileInfo(Args[0]);
+        FileInfo aarch64 = new FileInfo(Args[1]);
 
+        Parameters parameters = new Parameters();
+        parameters.info = x86;
+        parameters.synthetic = true;
+
+        Parameters parameters2 = new Parameters();
+        parameters2.info = aarch64;
+        parameters2.synthetic = false;
+
+        Thread thread = new Thread(ReadData);
+        Thread thread2 = new Thread(ReadData);
+        thread.Start(parameters);
+        thread2.Start(parameters2);
+        thread.Join();
+        thread2.Join();
+
+        Console.WriteLine(gBinary.triple);
+        Console.WriteLine(gSynthetic.triple);
+    }
+
+    private static void ReadData(object data)
+    {
+        Parameters parameters = (Parameters)data;
+        String path = Decompress(parameters.info);
         var Deserializer = new JavaScriptSerializer();
         Deserializer.MaxJsonLength = int.MaxValue;
-        Data run = Deserializer.Deserialize<Data>(File.ReadAllText(path));
-        Console.WriteLine(run.triple);
+        if(parameters.synthetic)
+        {
+            gSynthetic = Deserializer.Deserialize<Data>(File.ReadAllText(path));
+        }
+        else
+        {
+            gBinary = Deserializer.Deserialize<Data>(File.ReadAllText(path));
+        }
         File.Delete(path);
     }
 
-    public static String Decompress(FileInfo replay)
+    private static String Decompress(FileInfo replay)
     {
         using(FileStream stream = replay.OpenRead())
         {
