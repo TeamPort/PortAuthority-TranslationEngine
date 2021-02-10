@@ -35,8 +35,7 @@ public class Program
         thread.Join();
         thread2.Join();
 
-        Console.WriteLine(gBinary.triple);
-        Console.WriteLine(gSynthetic.triple);
+        Synthetic.buildSyntheticInstanceMap(gSynthetic, 2);
     }
 
     private static void ReadData(object data)
