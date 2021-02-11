@@ -12,8 +12,8 @@ public class Program
         public bool synthetic;
     }
 
-    private static Data gBinary;
-    private static Data gSynthetic;
+    private static Data gBase;
+    private static Data gPortedBinary;
 
     public static void Main(String[] Args)
     {
@@ -35,7 +35,27 @@ public class Program
         thread.Join();
         thread2.Join();
 
-        Synthetic.buildSyntheticInstanceMap(gSynthetic, 2);
+        Int32 count = 0;
+        const Int32 n = 2;
+        Data synthetic = Synthetic.buildSyntheticInstanceMap(gBase, n);
+        Int32 size = Math.Min(synthetic.run.Length, gPortedBinary.run.Length);
+        for(Int32 current = 0; current < size-(n-1); current+=n)
+        {
+            Int32 m = n;
+            bool test = true;
+            while(m > 0)
+            {
+                test = test && gPortedBinary.run[current].m.ToUpper() == synthetic.run[current].m.ToUpper();
+                m--;
+            }
+            if(test)
+            {
+                count++;
+            }
+        }
+
+        Console.WriteLine(count);
+        Console.WriteLine(size/n);
     }
 
     private static void ReadData(object data)
@@ -46,11 +66,11 @@ public class Program
         Deserializer.MaxJsonLength = int.MaxValue;
         if(parameters.synthetic)
         {
-            gSynthetic = Deserializer.Deserialize<Data>(File.ReadAllText(path));
+            gBase = Deserializer.Deserialize<Data>(File.ReadAllText(path));
         }
         else
         {
-            gBinary = Deserializer.Deserialize<Data>(File.ReadAllText(path));
+            gPortedBinary = Deserializer.Deserialize<Data>(File.ReadAllText(path));
         }
         File.Delete(path);
     }

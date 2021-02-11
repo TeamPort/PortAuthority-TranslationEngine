@@ -1,6 +1,6 @@
 using System;
-using System.IO;
 using System.Collections.Generic;
+using System.IO;
 using System.Web.Script.Serialization;
 
 public class Synthetic
@@ -70,9 +70,14 @@ public class Synthetic
         return key;
     }
 
-    static public void buildSyntheticInstanceMap(Data data, Int32 n)
+    static public Data buildSyntheticInstanceMap(Data data, Int32 n)
     {
-        if(!data.triple.Contains("x86_64")) return;
+        if(!data.triple.Contains("x86_64")) return null;
+
+        Data generatedData = new Data();
+        generatedData.triple = "aarch64-unknown-linux-gnu";
+
+        List<Instruction> list = new List<Instruction>();
 
         var processed = 0;
         String[] parts = {String.Empty, String.Empty, String.Empty, String.Empty};
@@ -146,6 +151,10 @@ public class Synthetic
                 value++;
                 processed++;
                 synthMap[instruction] = value;
+
+                Instruction replay = new Instruction();
+                replay.m = instruction;
+                list.Add(replay);
             }
         }
 
@@ -176,6 +185,13 @@ public class Synthetic
             synthMap[instruction] = value;
             needed-=(int)aarch64_distribution[instruction];
             m++;
+
+            Instruction replay = new Instruction();
+            replay.m = instruction;
+            list.Add(replay);
         }
+
+        generatedData.run = list.ToArray();
+        return generatedData;
     }
 }
