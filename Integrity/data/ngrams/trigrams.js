@@ -1,4 +1,4 @@
-var trigrams = {
+{
   "MOV-MOV-MOV":{
     "STR-STR-STR":5,
     "LDR-STR-LDR":3,
@@ -19,14 +19,14 @@ var trigrams = {
     "STR-LDUR-LDUR":1,
     "MOV-MOV-MOV":1,
     "BL-ADD-STR":1,
-    "STUR-STUR-LDUR":1,
+    "STUR-STUR-LDUR":1
   },
   "PUSH-MOV-SUB":{
     "SUB-STP-ADD":80,
     "STP-STR-MOV":12,
     "SUB-STP-STR":3,
     "SUB-STR-STR":1,
-    "LDR-MOV-STP":1,
+    "LDR-MOV-STP":1
   },
   "SUB-MOV-MOV":{
     "ADD-STUR-STUR":23,
@@ -44,7 +44,7 @@ var trigrams = {
     "STUR-LDUR-LDR":2,
     "ADD-ADRP-ADD":2,
     "ADD-ADD-STUR":1,
-    "MOV-SUB-SUB":1,
+    "MOV-SUB-SUB":1
   },
   "MOV-CALL-MOV":{
     "STR-BL-LDR":11,
@@ -72,7 +72,7 @@ var trigrams = {
     "ADD-BL-LDR":1,
     "ADD-LDR-STR":1,
     "BL-LDUR-LDUR":1,
-    "STR-MOV-STR":1,
+    "STR-MOV-STR":1
   },
   "MOV-MOV-CALL":{
     "LDR-BL-LDP":6,
@@ -108,7 +108,7 @@ var trigrams = {
     "STR-BL-LDR":1,
     "LDR-MUL-LDUR":1,
     "BL-ADD-LDR":1,
-    "LDR-LDR-STR":1,
+    "LDR-LDR-STR":1
   },
   "CALL-ADD-POP":{
     "LDP-ADD-RET":52,
@@ -119,7 +119,7 @@ var trigrams = {
     "LDR-LDR-BL":3,
     "LDUR-LDR-STR":2,
     "STR-LDR-LDR":2,
-    "LDP-LDP-RET":2,
+    "LDP-LDP-RET":2
   },
   "PUSH-MOV-MOV":{
     "SUB-STR-STR":26,
@@ -140,7 +140,7 @@ var trigrams = {
     "SUB-MOV-MOV":1,
     "SUB-STR-STRB":1,
     "STP-ADRP-ADRP":1,
-    "STR-MOV-LDR":1,
+    "STR-MOV-LDR":1
   },
   "MOV-MOV-ADD":{
     "LDR-LDR-ADD":5,
@@ -175,7 +175,7 @@ var trigrams = {
     "STR-STR-BL":1,
     "LDR-LDR-MOV":1,
     "ADD-STR-ADD":1,
-    "STR-LDR-ADD":1,
+    "STR-LDR-ADD":1
   },
   "LEA-MOV-MOV":{
     "LDR-STR-LDR":6,
@@ -220,7 +220,7 @@ var trigrams = {
     "ADD-STUR-STUR":1,
     "LDR-LDR-LDR":1,
     "STR-STR-STR":1,
-    "MOV-ADD-LDR":1,
+    "MOV-ADD-LDR":1
   },
   "ADD-MOV-MOV":{
     "STR-LDR-LDR":5,
@@ -259,7 +259,7 @@ var trigrams = {
     "B.GE-LDR-LDR":1,
     "STR-LDR-MOV":1,
     "STR-MOV-BL":1,
-    "STR-BL-ADD":1,
+    "STR-BL-ADD":1
   },
   "PUSH-PUSH-MOV":{
     "STP-MOV-STP":71,
@@ -295,7 +295,7 @@ var trigrams = {
     "LDR-STR-MOV":1,
     "BL-LDR-STR":1,
     "STUR-LDUR-LDUR":1,
-    "ADRP-LDR-ADD":1,
+    "ADRP-LDR-ADD":1
   },
   "ADD-MOV-ADD":{
     "ADD-ADD-ADD":18,
@@ -317,7 +317,7 @@ var trigrams = {
     "LDR-ADD-LDUR":2,
     "STR-BL-LDR":1,
     "SUB-BL-LDR":1,
-    "ADD-ADD-STR":1,
+    "ADD-ADD-STR":1
   },
   "LEA-LEA-CALL":{
     "LDR-STR-LDR":7,
@@ -349,7 +349,7 @@ var trigrams = {
     "BL-LDR-LDR":2,
     "STR-LDR-ADD":2,
     "LDR-BL-LDR":2,
-    "BL-LDR-STR":2,
+    "BL-LDR-STR":2
   },
   "LEA-LEA-LEA":{
     "STR-STR-LDR":8,
@@ -403,7 +403,7 @@ var trigrams = {
     "STR-BL-ADD":1,
     "MOV-MOV-STR":1,
     "ADD-MOV-MOV":1,
-    "STUR-LDUR-LDUR":1,
+    "STUR-LDUR-LDUR":1
   },
   "MOV-LEA-MOV":{
     "LDR-LDR-ADD":5,
@@ -436,7 +436,7 @@ var trigrams = {
     "MOV-BL-ADD":1,
     "ADD-STR-SUB":1,
     "SUB-STUR-STUR":1,
-    "FMUL-ADD-STR":1,
+    "FMUL-ADD-STR":1
   },
   "MOV-MOV-SHL":{
     "LDR-STR-LDR":11,
@@ -472,7 +472,7 @@ var trigrams = {
     "BL-LDR-STR":2,
     "ADD-LDR-MOV":2,
     "MUL-ADD-LDR":2,
-    "STR-ADD-STR":2,
+    "STR-ADD-STR":2
   },
   "CMP-JE-MOV":{
     "BL-LDRB-CBZ":22,
@@ -492,7 +492,7 @@ var trigrams = {
     "STR-MOV-STR":2,
     "STR-MOV-BL":2,
     "B.LS-LDR-STR":2,
-    "STR-MOV-B.EQ":2,
+    "STR-MOV-B.EQ":2
   },
   "MOV-CALL-CALL":{
     "BL-MOV-BL":68,
@@ -535,7 +535,7 @@ var trigrams = {
     "MOV-LDR-LDR":1,
     "LDR-EOR-CBNZ":1,
     "BL-MOV-LDR":1,
-    "RET-STR-MOV":1,
+    "RET-STR-MOV":1
   },
   "PUSH-XOR-MOV":{
     "STP-MOV-MOV":100
@@ -775,7 +775,7 @@ var trigrams = {
     "ADD-MOV-MOV":3,
     "BL-STR-LDR":3,
     "LDR-LDR-LDR":3,
-    "STUR-STUR-LDUR":3,
+    "STUR-STUR-LDUR":3
   },
   "MOVAPD-LEA-LEA":{
     "LDR-STR-LDR":14,
@@ -905,7 +905,7 @@ var trigrams = {
     "BL-LDUR-ADD":1,
     "LDR-STUR-STUR":1,
     "MOV-LSR-B":1,
-    "BL-STR-LDP":1,
+    "BL-STR-LDP":1
   },
   "TEST-JE-CALL":{
     "STR-TBZ-BL":49,
@@ -1041,7 +1041,7 @@ var trigrams = {
     "MOV-BL-ADD":2,
     "LDR-LDR-BL":2,
     "STR-BL-ADD":2,
-    "LDR-LDR-LDR":1,
+    "LDR-LDR-LDR":1
   },
   "JE-MOV-LEA":{
     "CBZ-LDR-MOV":81,
@@ -1134,7 +1134,7 @@ var trigrams = {
     "AND-LSL-LDR":1,
     "ASR-LSL-LDR":1,
     "LSL-LDR-ASR":1,
-    "ADRP-ADD-MOV":1,
+    "ADRP-ADD-MOV":1
   },
   "CALL-MOV-MOV":{
     "LDR-LDR-LDR":5,
@@ -1172,7 +1172,7 @@ var trigrams = {
     "ADD-LDR-STR":1,
     "LDR-LDUR-ADD":1,
     "B.NE-BL-LDR":1,
-    "STR-MOV-BL":1,
+    "STR-MOV-BL":1
   },
   "MOV-ADD-MOVSXD":{
     "LDUR-LDR-ADD":20,
@@ -1210,7 +1210,7 @@ var trigrams = {
     "B.GE-LDR-ADD":1,
     "B.GE-LDURSW-SUB":1,
     "STR-LDUR-ADD":1,
-    "LDURSW-STR-BL":1,
+    "LDURSW-STR-BL":1
   },
   "CALL-XOR-MOV":{
     "STR-LDR-LDR":11,
@@ -1245,7 +1245,7 @@ var trigrams = {
     "LDUR-LDUR-MOV":1,
     "LDUR-CMP-B.GE":1,
     "SUB-MOV-STR":1,
-    "LDUR-ADD-STUR":1,
+    "LDUR-ADD-STUR":1
   },
   "MOV-ADD-POP":{
     "STR-LDP-ADD":42,
@@ -1321,7 +1321,7 @@ var trigrams = {
     "STUR-LDUR-STR":1,
     "CMP-B.GE-LDUR":1,
     "CMP-B.GE-LDR":1,
-    "STR-MOV-BL":1,
+    "STR-MOV-BL":1
   },
   "SUB-XOR-MOV":{
     "MOV-SUB-MOV":56,
@@ -1435,7 +1435,7 @@ var trigrams = {
     "STR-STR-LDR":2,
     "STR-B-B":2,
     "LDUR-LDUR-LDUR":2,
-    "ADD-ADRP-ADD":1,
+    "ADD-ADRP-ADD":1
   },
   "LEA-MOV-LEA":{
     "STUR-STUR-STUR":21,
@@ -1708,7 +1708,7 @@ var trigrams = {
     "ADD-BL-LDR":1,
     "STR-STR-STR":1,
     "LDR-LDR-CMP":1,
-    "LDR-ADD-MOV":1,
+    "LDR-ADD-MOV":1
   },
   "LEA-CALL-MOVAPS":{
     "LDR-BL-ADD":11,
@@ -1758,7 +1758,7 @@ var trigrams = {
     "LDR-ADD-MOV":4,
     "STR-STR-LDR":4,
     "LDR-STR-STR":4,
-    "BL-ADD-STR":4,
+    "BL-ADD-STR":4
   },
   "CQO-MOV-IDIV":{
     "LDR-LDR-SDIV":15,
@@ -1835,7 +1835,7 @@ var trigrams = {
     "MUL-LDUR-ADD":1,
     "MOV-LDR-BL":1,
     "STR-LDR-STR":1,
-    "ADD-LDR-TST":1,
+    "ADD-LDR-TST":1
   },
   "ADD-MOV-LEA":{
     "LDR-STR-LDR":15,
@@ -1889,7 +1889,7 @@ var trigrams = {
     "B-ADRP-ADD":2,
     "B.GE-LDR-ADD":2,
     "LDR-MOV-MUL":2,
-    "MOV-MUL-SUB":2,
+    "MOV-MUL-SUB":2
   },
   "MOV-CMP-JGE":{
     "LDR-LDR-ADD":4,
@@ -1927,7 +1927,7 @@ var trigrams = {
     "LDR-BL-ADD":1,
     "LDUR-LDR-BL":1,
     "LDUR-CMP-B.GE":1,
-    "STUR-STUR-LDUR":1,
+    "STUR-STUR-LDUR":1
   },
   "CMP-JGE-MOV":{
     "LDR-STR-MOV":6,
@@ -1962,7 +1962,7 @@ var trigrams = {
     "STR-LDR-LDR":1,
     "MUL-MOV-MUL":1,
     "MOV-SDIV-MUL":1,
-    "LDR-STR-STR":1,
+    "LDR-STR-STR":1
   },
   "JMP-MOV-ADD":{
     "STR-MOV-STR":11,
@@ -2094,7 +2094,7 @@ var trigrams = {
     "LDR-LDR-LDR":2,
     "BL-LDR-STR":2,
     "STUR-LDUR-STUR":2,
-    "LDR-MOV-MUL":1,
+    "LDR-MOV-MUL":1
   },
   "JGE-XOR-MOV":{
     "STUR-STUR-LDUR":16,
@@ -2346,7 +2346,7 @@ var trigrams = {
     "MOV-MOVK-STR":1,
     "MOV-STR-MOV":1,
     "ADD-LDUR-MOV":1,
-    "LDR-STR-MOV":1,
+    "LDR-STR-MOV":1
   },
   "JGE-MOV-MOV":{
     "STR-STR-LDR":8,
@@ -2371,7 +2371,7 @@ var trigrams = {
     "LDR-BL-LDR":3,
     "CSET-TBNZ-LDR":1,
     "BL-LDR-LDUR":1,
-    "LDR-LDUR-LDR":1,
+    "LDR-LDUR-LDR":1
   },
   "XOR-MOV-MOVAPD":{
     "LDR-LDR-LDR":21,
@@ -2408,7 +2408,7 @@ var trigrams = {
     "LDR-LDR-LDR":3,
     "STR-LDR-ADD":3,
     "ADD-STR-LDR":3,
-    "BL-STR-B":3,
+    "BL-STR-B":3
   },
   "CALL-MOVAPD-LEA":{
     "ADD-LDR-STR":6,
@@ -2508,7 +2508,7 @@ var trigrams = {
     "LDR-STR-BL":1,
     "TBNZ-LDR-ADD":1,
     "B-LDUR-LDR":1,
-    "STR-MOV-LDR":1,
+    "STR-MOV-LDR":1
   },
   "MOV-JMP-MOV":{
     "LDR-STR-LDR":4,
@@ -2536,7 +2536,7 @@ var trigrams = {
     "ADD-MOV-ADD":2,
     "AND-ADD-STR":2,
     "MOV-BL-ADD":2,
-    "ADD-STR-ADD":1,
+    "ADD-STR-ADD":1
   },
   "POP-POP-RET":{
     "LDR-MOV-LDR":30,
@@ -2604,7 +2604,7 @@ var trigrams = {
     "BL-B-LDR":1,
     "STR-B-LDR":1,
     "B.GE-LDUR-LDR":1,
-    "B.LE-LDUR-LDR":1,
+    "B.LE-LDUR-LDR":1
   },
   "SHL-MOV-ADD":{
     "STR-STR-STR":43,
@@ -2735,7 +2735,7 @@ var trigrams = {
     "LDR-ADD-LDUR":1,
     "LDR-CMP-B.LE":1,
     "B.HS-LDR-STUR":1,
-    "STR-LDR-B":1,
+    "STR-LDR-B":1
   },
   "CALL-MOV-CALL":{
     "LDP-ORR-STR":10,
@@ -3006,7 +3006,7 @@ var trigrams = {
     "LDR-STR-BL":3,
     "BL-STR-LDR":3,
     "LDR-CMP-B.GE":3,
-    "ADD-STR-ADD":3,
+    "ADD-STR-ADD":3
   },
   "MOV-CALL-MOVSS":{
     "STR-LDR-LDR":17,
@@ -4548,7 +4548,7 @@ var trigrams = {
     "LDR-STR-STR":2,
     "LDP-STR-LDP":2,
     "LDRB-STRB-STR":2,
-    "STR-STRB-STR":2,
+    "STR-STRB-STR":2
   },
   "SETNE-AND-MOVZX":{
     "CMP-CSET-AND":11,
@@ -12959,16 +12959,14 @@ var trigrams = {
   "CALLQ-JMPQ-NOPL":{
     "MOV-MOV-SVC":100
   },
-
-  // Special transition trigrams
   "CALL-PUSH-MOV":{
     "BL-STP-LDR":50,
     "BL-ADRP-LDR":25,
-    "BL-LDR-LDR":25,
+    "BL-LDR-LDR":25
   },
   "MOV-CALL-PUSH":{
     "MOV-BL-STP":50,
     "MOV-BL-ADRP":25,
-    "MOV-BL-LDR":25,
-  },
+    "MOV-BL-LDR":25
+  }
 }

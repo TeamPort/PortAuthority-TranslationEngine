@@ -36,7 +36,7 @@ public class Program
         thread2.Join();
 
         Int32 count = 0;
-        const Int32 n = 2;
+        const Int32 n = 3;
         Data synthetic = Synthetic.buildSyntheticInstanceMap(gBase, n);
         Int32 size = Math.Min(synthetic.run.Length, gPortedBinary.run.Length);
         for(Int32 current = 0; current < size-(n-1); current+=n)
