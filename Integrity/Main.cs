@@ -14,6 +14,7 @@ public class Program
 
     private static Data gBase;
     private static Data gPortedBinary;
+    private static Data gSynthetic;
 
     public static void Main(String[] Args)
     {
@@ -35,27 +36,57 @@ public class Program
         thread.Join();
         thread2.Join();
 
-        Int32 count = 0;
-        const Int32 n = 3;
-        Data synthetic = Synthetic.buildSyntheticInstanceMap(gBase, n);
-        Int32 size = Math.Min(synthetic.run.Length, gPortedBinary.run.Length);
-        for(Int32 current = 0; current < size-(n-1); current+=n)
+        Int32 toRet = 0;
+        Int32 previous = 0;
+
+        const Int32 n = 2;
+        Int32 instances = 0;
+        gSynthetic = Synthetic.buildSyntheticInstanceMap(gBase, n);
+        float size = Math.Min(gSynthetic.run.Length, gPortedBinary.run.Length);
+        for(Int32 current = 0; current < size; current++)
         {
-            Int32 m = n;
-            bool test = true;
-            while(m > 0)
+            String mnem = gPortedBinary.run[current].m.ToUpper();
+            bool match = mnem == gSynthetic.run[current].m.ToUpper();
+            toRet++;
+            if(match)
             {
-                test = test && gPortedBinary.run[current].m.ToUpper() == synthetic.run[current].m.ToUpper();
-                m--;
+                instances++;
             }
-            if(test)
+
+            if(mnem == "RET")
             {
-                count++;
+                Int32 offset = 0;
+                while((current + offset) < size
+                && (current - offset) > 0
+                && gSynthetic.run[current + offset].m.ToUpper() != "RET"
+                && gSynthetic.run[current - offset].m.ToUpper() != "RET"
+                )
+                {
+                    offset++;
+                }
+                offset = gSynthetic.run[current + offset].m.ToUpper() != "RET" ? -offset: offset;
+                BLEU(n, previous, toRet, offset);
+                toRet = 0;
+                previous = current + 1;
             }
         }
 
-        Console.WriteLine(count);
-        Console.WriteLine(size/n);
+        Console.WriteLine("Raw " + instances/size);
+    }
+
+    private static void BLEU(Int32 n, Int32 ndx, Int32 count, Int32 offset)
+    {
+        Int32 distance = Math.Abs(offset);
+        if(distance > count || distance > 16)
+        {
+            offset = 0;
+        }
+
+        Instruction[] reference = new Instruction[count];
+        Instruction[] candidate = new Instruction[count + offset];
+        Array.Copy(gPortedBinary.run, ndx, reference, 0, count);
+        Array.Copy(gSynthetic.run, ndx, candidate, 0, count + offset);
+        Console.WriteLine(count + " " + offset);
     }
 
     private static void ReadData(object data)
