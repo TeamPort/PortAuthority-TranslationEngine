@@ -109,7 +109,7 @@ public class Program
         Int32 found = 0;
         Int32 cursor = 0;
         HashSet<String> ngrams = new HashSet<String>();
-        while(cursor < (count + offset)-n)
+        while(cursor <= (count + offset)-n)
         {
             String ngram = String.Empty;
             for(int i = 0; i < n; i++)
