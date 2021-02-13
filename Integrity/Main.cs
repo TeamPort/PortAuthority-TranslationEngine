@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Threading;
@@ -59,12 +60,19 @@ public class Program
                 while((current + offset) < size
                 && (current - offset) > 0
                 && gSynthetic.run[current + offset].m.ToUpper() != "RET"
-                && gSynthetic.run[current - offset].m.ToUpper() != "RET"
-                )
+                && gSynthetic.run[current - offset].m.ToUpper() != "RET")
                 {
                     offset++;
                 }
-                offset = gSynthetic.run[current + offset].m.ToUpper() != "RET" ? -offset: offset;
+
+                if((current + offset) >= size)
+                {
+                    offset = -offset;
+                }
+                else
+                {
+                    offset = gSynthetic.run[current + offset].m.ToUpper() != "RET" ? -offset: offset;
+                }
                 BLEU(n, previous, toRet, offset);
                 toRet = 0;
                 previous = current + 1;
@@ -72,7 +80,11 @@ public class Program
         }
 
         Console.WriteLine("Raw " + instances/size);
+        Console.WriteLine("Average score " + gAccumulator/(float)gCount);
     }
+
+    private static Int32 gCount = 0;
+    private static float gAccumulator = 0.0f;
 
     private static void BLEU(Int32 n, Int32 ndx, Int32 count, Int32 offset)
     {
@@ -86,7 +98,54 @@ public class Program
         Instruction[] candidate = new Instruction[count + offset];
         Array.Copy(gPortedBinary.run, ndx, reference, 0, count);
         Array.Copy(gSynthetic.run, ndx, candidate, 0, count + offset);
-        Console.WriteLine(count + " " + offset);
+
+        String sentence = String.Empty;
+        for(int i = 0; i < count; i++)
+        {
+            sentence += reference[i].m + " ";
+        }
+        sentence = sentence.Trim();
+
+        Int32 found = 0;
+        Int32 cursor = 0;
+        HashSet<String> ngrams = new HashSet<String>();
+        while(cursor < (count + offset)-n)
+        {
+            String ngram = String.Empty;
+            for(int i = 0; i < n; i++)
+            {
+                ngram += candidate[cursor + i].m + " ";
+            }
+            ngram = ngram.Trim();
+            if(ngrams.Add(ngram))
+            {
+                Int32 next = sentence.IndexOf(ngram);
+                while(sentence != String.Empty && next != -1)
+                {
+                    found++;
+                    Int32 start = next + ngram.Length;
+                    if(start < sentence.Length)
+                    {
+                        sentence = sentence.Substring(start);
+                        next = sentence.IndexOf(ngram);
+                    }
+                    else
+                    {
+                        next = -1;
+                    }
+                }
+            }
+            cursor++;
+        }
+
+        float score = 0.0f;
+        if(ngrams.Count > 0)
+        {
+            score = found/(float)ngrams.Count;
+        }
+
+        gAccumulator+=score;
+        gCount++;
     }
 
     private static void ReadData(object data)
