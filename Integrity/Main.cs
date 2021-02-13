@@ -119,20 +119,14 @@ public class Program
             ngram = ngram.Trim();
             if(ngrams.Add(ngram))
             {
-                Int32 next = sentence.IndexOf(ngram);
-                while(sentence != String.Empty && next != -1)
+                String temp = sentence;
+                Int32 next = temp.IndexOf(ngram);
+                while(next != -1)
                 {
                     found++;
                     Int32 start = next + ngram.Length;
-                    if(start < sentence.Length)
-                    {
-                        sentence = sentence.Substring(start);
-                        next = sentence.IndexOf(ngram);
-                    }
-                    else
-                    {
-                        next = -1;
-                    }
+                    temp = temp.Substring(start);
+                    next = temp.IndexOf(ngram);
                 }
             }
             cursor++;
