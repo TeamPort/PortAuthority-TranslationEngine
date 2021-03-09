@@ -192,6 +192,33 @@ public class Synthetic
         }
 
         generatedData.run = list.ToArray();
+
+        Dictionary<String, String> aarch64_dummy = Deserializer.Deserialize<Dictionary<String, String>>(File.ReadAllText(@"data/dummy/aarch64.js"));
+        using(BinaryWriter writer = new BinaryWriter(File.Open("a.out", FileMode.Create)))
+        {
+            foreach(var instruction in list)
+            {
+                if(aarch64_dummy.ContainsKey(instruction.m))
+                {
+                    Int32 value = Convert.ToInt32(aarch64_dummy[instruction.m] , 16);
+                    writer.Write(value);
+                }
+                else if(instruction.m.Contains("B."))
+                {
+                    Int32 value = Convert.ToInt32(aarch64_dummy["B.NE"], 16); // B.cond
+                    writer.Write(value);
+                }
+                else if(instruction.m.Contains("INVALID"))
+                {
+                    // Do nothing
+                }
+                else
+                {
+                    Console.WriteLine("Missing " + instruction.m);
+                }
+            }
+        }
+
         return generatedData;
     }
 }
