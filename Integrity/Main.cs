@@ -19,6 +19,7 @@ public class Program
 
     public static void Main(String[] Args)
     {
+        Int32 n = Int32.Parse(Args[2]);
         FileInfo x86 = new FileInfo(Args[0]);
         FileInfo aarch64 = new FileInfo(Args[1]);
 
@@ -40,7 +41,6 @@ public class Program
         Int32 toRet = 0;
         Int32 previous = 0;
 
-        const Int32 n = 2;
         Int32 instances = 0;
         gSynthetic = Synthetic.buildSyntheticInstanceMap(gBase, n);
         float size = Math.Min(gSynthetic.run.Length, gPortedBinary.run.Length);

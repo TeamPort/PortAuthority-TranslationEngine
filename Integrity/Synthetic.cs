@@ -24,6 +24,9 @@ public class Synthetic
             case 3:
                 data = @"data/ngrams/trigrams.js";
                 break;
+            case 4:
+                data = @"data/ngrams/quadgrams.js";
+                break;
         }
         if(data == String.Empty) return;
 
