@@ -156,8 +156,8 @@ public class Correlate
         foreach(String line in lines1)
         {
             Int32 ndx = 0;
-            String[] opcodes1 = lines1[current].Split(" ");
-            String[] opcodes2 = lines2[current].Split(" ");
+            String[] opcodes1 = lines1[current].Trim().Split(" ");
+            String[] opcodes2 = lines2[current].Trim().Split(" ");
             while(ndx < opcodes1.Length-grams && ndx < opcodes2.Length-grams)
             {
                 String key1 = opcodes1[ndx];
