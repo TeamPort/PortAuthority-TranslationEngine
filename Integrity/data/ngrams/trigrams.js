@@ -1,16 +1,21 @@
 {
+  "PUSH-MOV-SUB":{
+    "SUB-STP-ADD":83,
+    "STP-STR-MOV":11,
+    "SUB-STP-STR":2
+  },
   "MOV-MOV-MOV":{
     "STR-STR-STR":5,
-    "LDR-STR-LDR":3,
     "STR-LDR-LDR":3,
+    "LDR-STR-LDR":3,
     "LDR-LDR-LDR":3,
     "STR-LDR-STR":2,
-    "LDR-LDR-ADD":1,
+    "LDR-LDR-ADD":2,
+    "LDR-LDR-STR":1,
     "STUR-STUR-STUR":1,
     "STR-BL-LDR":1,
     "STUR-STR-STR":1,
     "STR-STR-LDR":1,
-    "LDR-LDR-STR":1,
     "LDUR-LDR-ADD":1,
     "LDR-ADD-STR":1,
     "STUR-LDUR-LDR":1,
@@ -18,33 +23,30 @@
     "LDUR-LDR-LDR":1,
     "STR-LDUR-LDUR":1,
     "MOV-MOV-MOV":1,
-    "BL-ADD-STR":1,
-    "STUR-STUR-LDUR":1
-  },
-  "PUSH-MOV-SUB":{
-    "SUB-STP-ADD":80,
-    "STP-STR-MOV":12,
-    "SUB-STP-STR":3,
-    "SUB-STR-STR":1,
-    "LDR-MOV-STP":1
+    "STUR-STUR-LDUR":1,
+    "BL-ADD-STR":1
   },
   "SUB-MOV-MOV":{
-    "ADD-STUR-STUR":23,
-    "ADD-STUR-STR":15,
-    "ADD-STR-STR":8,
+    "ADD-STUR-STUR":21,
+    "ADD-STUR-STR":14,
+    "ADD-STR-STR":7,
     "ADD-MOV-STUR":6,
-    "STR-MOV-STR":6,
+    "STR-MOV-STR":5,
     "ADD-MOV-MOV":4,
+    "ADD-STR-LDR":3,
+    "ADD-ADD-ADD":3,
     "MOV-SUB-ADD":3,
-    "ADD-MOV-STR":3,
-    "MUL-LDUR-SUBS":3,
-    "ADD-STR-LDR":2,
+    "ADD-MOV-STR":2,
+    "MUL-LDUR-SUBS":2,
+    "ADD-ADD-STUR":2,
     "MOV-SUB-MOV":2,
+    "ADD-ADRP-ADD":2,
     "B.GE-LDUR-LDR":2,
     "STUR-LDUR-LDR":2,
-    "ADD-ADRP-ADD":2,
-    "ADD-ADD-STUR":1,
-    "MOV-SUB-SUB":1
+    "MOV-SUB-SUB":1,
+    "ADD-SUB-ADD":1,
+    "ADD-SUB-SUB":1,
+    "ADD-MOV-MOVK":1
   },
   "MOV-CALL-MOV":{
     "STR-BL-LDR":11,
@@ -56,6 +58,7 @@
     "STR-STR-LDR":2,
     "MOV-STR-BL":2,
     "STR-LDR-LDR":2,
+    "LDR-STR-LDR":2,
     "ADD-LDURSW-STR":2,
     "STUR-LDUR-LDUR":2,
     "LDR-MOV-BL":2,
@@ -63,19 +66,37 @@
     "ADD-STR-B":1,
     "MOV-BL-LDR":1,
     "ADD-STR-MOV":1,
-    "LDR-STR-LDR":1,
     "BL-LDR-LDR":1,
     "MUL-LDUR-SUBS":1,
     "LDR-BL-LDR":1,
     "BL-STR-STR":1,
     "LDR-STR-MOV":1,
+    "STR-STR-BL":1,
     "ADD-BL-LDR":1,
     "ADD-LDR-STR":1,
     "BL-LDUR-LDUR":1,
     "STR-MOV-STR":1
   },
+  "PUSH-MOV-MOV":{
+    "SUB-STR-STR":28,
+    "SUB-STR-LDR":24,
+    "SUB-STRH-STRH":5,
+    "SUB-STR-ADD":5,
+    "STP-MOV-MOV":5,
+    "MOVZ-MOVK-MOVK":4,
+    "SUB-STR-MOV":4,
+    "SUB-STRB-STRB":4,
+    "SUB-STRH-STR":3,
+    "SUB-STRB-STR":3,
+    "STP-MOV-STR":3,
+    "SUB-MOV-STR":2,
+    "SUB-ADRP-ADD":1,
+    "STP-MOV-LDR":1,
+    "MOV-ADRP-ADD":1,
+    "SUB-MOV-MOV":1
+  },
   "MOV-MOV-CALL":{
-    "LDR-BL-LDP":6,
+    "LDR-BL-LDP":5,
     "STR-LDR-LDR":4,
     "LDR-STR-LDR":3,
     "LDR-LDR-BL":3,
@@ -108,6 +129,7 @@
     "STR-BL-LDR":1,
     "LDR-MUL-LDUR":1,
     "BL-ADD-LDR":1,
+    "MOVK-MOVK-MOVZ":1,
     "LDR-LDR-STR":1
   },
   "CALL-ADD-POP":{
@@ -121,26 +143,14 @@
     "STR-LDR-LDR":2,
     "LDP-LDP-RET":2
   },
-  "PUSH-MOV-MOV":{
-    "SUB-STR-STR":26,
-    "SUB-STR-LDR":21,
-    "SUB-STRH-STRH":6,
-    "STP-MOV-MOV":6,
-    "SUB-STR-ADD":6,
-    "SUB-STRB-STRB":5,
-    "SUB-STRH-STR":4,
-    "SUB-STRB-STR":4,
-    "STP-MOV-STR":3,
-    "MOVZ-MOVK-MOVK":2,
-    "SUB-MOV-STR":2,
-    "SUB-STR-MOV":2,
-    "STP-MOV-LDR":2,
-    "MOV-ADRP-ADD":1,
-    "SUB-ADRP-ADD":1,
-    "SUB-MOV-MOV":1,
-    "SUB-STR-STRB":1,
-    "STP-ADRP-ADRP":1,
-    "STR-MOV-LDR":1
+  "PUSH-PUSH-MOV":{
+    "STP-MOV-STP":74,
+    "STP-MOV-MOV":11,
+    "STP-MOV-STR":6,
+    "STP-MOV-LDR":3,
+    "CBNZ-STR-MOV":2,
+    "MOV-LDR-MOV":2,
+    "AND-MOV-STP":2
   },
   "MOV-MOV-ADD":{
     "LDR-LDR-ADD":5,
@@ -261,15 +271,6 @@
     "STR-MOV-BL":1,
     "STR-BL-ADD":1
   },
-  "PUSH-PUSH-MOV":{
-    "STP-MOV-STP":71,
-    "STP-MOV-MOV":13,
-    "STP-MOV-STR":7,
-    "STP-MOV-LDR":4,
-    "CBNZ-STR-MOV":2,
-    "MOV-LDR-MOV":2,
-    "AND-MOV-STP":2
-  },
   "MOV-ADD-MOV":{
     "STR-STR-STR":4,
     "LDR-STR-LDR":4,
@@ -320,13 +321,15 @@
     "ADD-ADD-STR":1
   },
   "LEA-LEA-CALL":{
-    "LDR-STR-LDR":7,
+    "LDR-STR-LDR":6,
     "STR-LDR-LDR":6,
     "LDR-ADD-STR":4,
     "ADD-LDR-STR":4,
     "BL-ADD-STR":3,
     "LDR-MUL-ADD":3,
     "LDR-LDR-LDR":3,
+    "STR-STR-BL":3,
+    "LDR-LDR-BL":3,
     "STR-BL-ADD":2,
     "STR-LDR-SUBS":2,
     "LDR-STR-BL":2,
@@ -334,13 +337,11 @@
     "BL-ADD-LDR":2,
     "MOV-MOV-STR":2,
     "LDR-LDR-STR":2,
-    "STR-STR-BL":2,
     "ADD-STR-LDR":2,
     "STR-LDR-BL":2,
     "LDR-MOV-STR":2,
     "ADD-STR-B":2,
     "STR-STR-LDR":2,
-    "LDR-LDR-BL":2,
     "LDR-STR-MOV":2,
     "LDR-MOV-BL":2,
     "LDR-BL-ADD":2,
@@ -349,7 +350,73 @@
     "BL-LDR-LDR":2,
     "STR-LDR-ADD":2,
     "LDR-BL-LDR":2,
-    "BL-LDR-STR":2
+    "BL-LDR-STR":2,
+    "BL-STR-LDUR":1,
+    "LDUR-STR-STR":1
+  },
+  "MOV-LEA-MOV":{
+    "LDR-STR-MOV":5,
+    "LDR-LDR-ADD":5,
+    "STR-LDR-LDR":4,
+    "BL-LDR-LDR":4,
+    "STR-STR-LDR":3,
+    "ADD-LDR-STR":3,
+    "LDR-LDR-LDR":3,
+    "BL-ADD-STR":3,
+    "LDR-ADD-LDR":3,
+    "STR-LDR-ADD":3,
+    "ADD-STR-STR":2,
+    "LDR-BL-ADD":2,
+    "ADD-STR-BL":2,
+    "LDR-ADD-BL":2,
+    "ADD-STR-ADD":2,
+    "STR-LDR-STR":1,
+    "LDR-STR-LDR":1,
+    "LDR-LDUR-LDR":1,
+    "LDR-CMP-B.GE":1,
+    "MOV-ADD-LDR":1,
+    "MOV-MOV-MOV":1,
+    "MOV-BL-STR":1,
+    "LDR-BL-STR":1,
+    "MOV-LDR-STR":1,
+    "LDR-ADD-STR":1,
+    "STR-BL-STR":1,
+    "LDR-LDR-BL":1,
+    "MOV-BL-ADD":1,
+    "ADD-STR-SUB":1,
+    "SUB-STUR-STUR":1,
+    "FMUL-ADD-STR":1,
+    "BL-LDUR-LDR":1
+  },
+  "ADD-POP-RET":{
+    "LDP-ADD-RET":33,
+    "STR-LDR-LDR":7,
+    "BL-STR-LDR":7,
+    "LDR-BL-AND":7,
+    "LDR-STR-LDP":7,
+    "BL-LDR-MUL":7,
+    "BL-LDUR-LDUR":4,
+    "LDR-MUL-LDUR":4,
+    "BL-LDR-STR":3,
+    "BL-ADD-STR":2,
+    "BL-LDP-ADD":2,
+    "LDURB-STURB-LDURB":1,
+    "ADD-LDR-ADD":1,
+    "B-BL-B":1,
+    "MOV-LDR-LDR":1,
+    "LDR-ADD-STR":1,
+    "MUL-SDIV-MUL":1,
+    "LDR-STR-LDURSW":1,
+    "STR-LDR-STR":1,
+    "LDR-LDP-ADD":1,
+    "LDR-LDR-LDR":1,
+    "BL-LDR-ADD":1,
+    "MOV-MUL-SDIV":1,
+    "STR-MOV-LDR":1,
+    "MOV-LDP-ADD":1,
+    "STR-LDR-MOV":1,
+    "LDR-MOV-LDR":1,
+    "LDUR-ADD-STUR":1
   },
   "LEA-LEA-LEA":{
     "STR-STR-LDR":8,
@@ -404,39 +471,6 @@
     "MOV-MOV-STR":1,
     "ADD-MOV-MOV":1,
     "STUR-LDUR-LDUR":1
-  },
-  "MOV-LEA-MOV":{
-    "LDR-LDR-ADD":5,
-    "LDR-STR-MOV":4,
-    "STR-LDR-LDR":4,
-    "BL-LDR-LDR":4,
-    "STR-STR-LDR":3,
-    "ADD-LDR-STR":3,
-    "LDR-LDR-LDR":3,
-    "BL-ADD-STR":3,
-    "LDR-ADD-LDR":3,
-    "STR-LDR-ADD":3,
-    "ADD-STR-STR":2,
-    "LDR-BL-ADD":2,
-    "ADD-STR-BL":2,
-    "LDR-ADD-BL":2,
-    "ADD-STR-ADD":2,
-    "STR-LDR-STR":2,
-    "LDR-STR-LDR":1,
-    "LDR-LDUR-LDR":1,
-    "LDR-CMP-B.GE":1,
-    "MOV-ADD-LDR":1,
-    "MOV-MOV-MOV":1,
-    "MOV-BL-STR":1,
-    "LDR-BL-STR":1,
-    "MOV-LDR-STR":1,
-    "LDR-ADD-STR":1,
-    "STR-BL-STR":1,
-    "LDR-LDR-BL":1,
-    "MOV-BL-ADD":1,
-    "ADD-STR-SUB":1,
-    "SUB-STUR-STUR":1,
-    "FMUL-ADD-STR":1
   },
   "MOV-MOV-SHL":{
     "LDR-STR-LDR":11,
@@ -504,14 +538,16 @@
     "LDUR-ADD-LDP":2
   },
   "POP-RET-NOP":{
-    "LDP-ADD-RET":14,
-    "LDR-LDUR-ADD":11,
-    "BL-STR-LDR":5,
+    "LDP-ADD-RET":12,
+    "LDR-LDUR-ADD":10,
+    "BL-MOV-STRB":5,
+    "BL-STR-LDR":4,
     "LDR-LDR-ADD":4,
     "STUR-LDUR-LDP":4,
     "B-LDR-LDR":4,
     "LDR-LDR-EOR":3,
-    "BL-MOV-STRB":2,
+    "BL-LDP-RET":3,
+    "CSET-AND-LDP":3,
     "STR-LDR-MOV":2,
     "LDURB-AND-LDP":2,
     "STUR-LDR-TBNZ":2,
@@ -519,16 +555,18 @@
     "LDUR-LDR-ADD":2,
     "ADD-STR-B":2,
     "STR-BL-LDR":2,
-    "MOV-ADD-RET":2,
-    "LDR-STR-LDR":2,
-    "BL-LDP-ADD":2,
+    "MOV-ADD-RET":1,
+    "LDR-STR-LDR":1,
+    "BL-LDP-ADD":1,
     "LDR-LDRB-LDR":1,
     "LDR-MOV-ADD":1,
     "LDR-BL-LDR":1,
     "STR-MOV-LDR":1,
     "LDR-BL-AND":1,
     "LDR-LDR-FMLA":1,
+    "STR-LDP-ADD":1,
     "MUL-ADD-LDP":1,
+    "BL-LDR-STR":1,
     "STR-LDR-LDP":1,
     "MOV-CMP-B.LE":1,
     "CBNZ-LDP-LDP":1,
@@ -541,10 +579,10 @@
     "STP-MOV-MOV":100
   },
   "MOV-PUSH-PUSH":{
-    "MOV-STP-ADRP":60,
-    "STP-MOV-LDR":14,
-    "STP-ADRP-STP":12,
-    "STP-ADRP-ADRP":9,
+    "MOV-STP-ADRP":53,
+    "STP-ADRP-ADRP":20,
+    "STP-MOV-LDR":12,
+    "STP-ADRP-STP":10,
     "STR-MOV-STP":2,
     "MOV-STR-ADRP":2
   },
@@ -598,9 +636,9 @@
     "BL-LDRB-CBZ":3
   },
   "MOV-TEST-JE":{
-    "ADD-LDR-CBZ":43,
-    "LDR-CBZ-BR":8,
-    "ADD-LDR-STR":5,
+    "ADD-LDR-CBZ":39,
+    "LDR-CBZ-BR":16,
+    "ADD-LDR-STR":4,
     "LDR-LDR-BL":3,
     "TBNZ-B-LDR":3,
     "LDR-LDRB-TBNZ":3,
@@ -610,15 +648,15 @@
     "B.NE-B-LDR":3,
     "MOV-BL-LDR":3,
     "LDR-CBZ-LDR":3,
-    "ADD-ADRP-ADD":2,
-    "ADRP-LDR-B":2,
-    "ADRP-LDR-CBZ":2,
-    "LDP-ORR-STR":2,
-    "CBZ-LDRB-CBZ":2,
-    "STR-LDR-STR":2,
-    "LDRB-CBNZ-LDR":2,
-    "STR-MOV-LDR":2,
-    "LDR-MOV-LDR":2
+    "ADD-ADRP-ADD":1,
+    "ADRP-LDR-B":1,
+    "ADRP-LDR-CBZ":1,
+    "LDP-ORR-STR":1,
+    "CBZ-LDRB-CBZ":1,
+    "STR-LDR-STR":1,
+    "LDRB-CBNZ-LDR":1,
+    "STR-MOV-LDR":1,
+    "LDR-MOV-LDR":1
   },
   "CALL-CALL-MOV":{
     "BL-BL-BL":34,
@@ -636,11 +674,12 @@
     "LDP-ORR-STR":1
   },
   "MOV-CALL-NOP":{
-    "BL-MOV-BL":63,
+    "BL-MOV-BL":60,
     "MOV-BL-MOV":12,
     "STR-STR-MOV":5,
     "ORR-STR-TBZ":5,
     "MOV-B-MOV":5,
+    "BL-TBNZ-B":5,
     "LDUR-STR-LDR":2,
     "CBNZ-MOV-LDR":2,
     "CBZ-B-MOV":2,
@@ -695,31 +734,6 @@
     "LDUR-ADD-MOV":1,
     "BL-CMP-B.NE":1,
     "ORR-STR-TBZ":1
-  },
-  "ADD-POP-RET":{
-    "LDP-ADD-RET":39,
-    "STR-LDR-LDR":10,
-    "BL-LDUR-LDUR":7,
-    "LDR-MUL-LDUR":7,
-    "BL-LDR-STR":5,
-    "BL-ADD-STR":3,
-    "BL-LDP-ADD":3,
-    "LDURB-STURB-LDURB":2,
-    "ADD-LDR-ADD":2,
-    "B-BL-B":2,
-    "MOV-LDR-LDR":2,
-    "LDR-ADD-STR":2,
-    "MUL-SDIV-MUL":2,
-    "LDR-STR-LDURSW":2,
-    "STR-LDR-STR":2,
-    "LDR-LDP-ADD":2,
-    "LDR-LDR-LDR":2,
-    "BL-LDR-ADD":2,
-    "MOV-MUL-SDIV":2,
-    "STR-MOV-LDR":2,
-    "MOV-LDP-ADD":2,
-    "STR-LDR-MOV":2,
-    "LDR-MOV-LDR":2
   },
   "CALL-MOVAPS-LEA":{
     "ADD-STR-LDR":12,
@@ -881,12 +895,14 @@
     "LDP-LDR-LDP":2
   },
   "CALL-MOV-ADD":{
-    "LDUR-ADD-LDP":15,
+    "LDUR-ADD-LDP":14,
     "STR-LDR-LDR":6,
-    "ADD-ADD-ADD":6,
-    "LDR-LDR-LDR":6,
-    "LDR-STR-LDR":6,
+    "ADD-ADD-ADD":5,
+    "LDR-LDR-LDR":5,
+    "LDR-STR-LDR":5,
     "STR-LDUR-LDUR":5,
+    "LDUR-LDR-BL":3,
+    "STR-STR-BL":3,
     "ADD-BL-ADD":2,
     "ADD-STR-B":2,
     "ADD-STR-ADD":2,
@@ -967,9 +983,9 @@
     "CBNZ-LDP-LDP":1
   },
   "POP-POP-POP":{
-    "LDP-RET-LDR":32,
-    "LDP-LDR-LDP":6,
-    "LDR-LDR-EOR":6,
+    "LDP-RET-LDR":29,
+    "LDP-LDR-LDP":13,
+    "LDR-LDR-EOR":5,
     "ORR-BL-LDR":4,
     "LDR-LDP-RET":3,
     "STR-LDP-STR":3,
@@ -1063,13 +1079,13 @@
     "MOV-MOV-LDR":12
   },
   "NOP-MOV-MOV":{
-    "ADD-MOV-LDR":41,
-    "LDR-MOV-MOV":7,
-    "CBNZ-NOP-LDR":4,
-    "LDP-LDP-RET":4,
-    "EOR-BFI-CBNZ":4,
-    "MOV-BL-TST":4,
-    "BL-TST-B.NE":4,
+    "ADD-MOV-LDR":37,
+    "LDR-MOV-MOV":17,
+    "CBNZ-NOP-LDR":3,
+    "LDP-LDP-RET":3,
+    "EOR-BFI-CBNZ":3,
+    "MOV-BL-TST":3,
+    "BL-TST-B.NE":3,
     "CMN-B.NE-B":2,
     "MOV-LDR-BLR":2,
     "LDR-CMP-CSEL":2,
@@ -1155,6 +1171,9 @@
     "BL-MOV-BL":2,
     "MOV-MOV-BL":1,
     "SDIV-STR-LDR":1,
+    "SUB-SUB-SUB":1,
+    "STUR-STUR-LDUR":1,
+    "STUR-LDUR-STR":1,
     "ADD-STR-B":1,
     "MOV-BL-LDR":1,
     "ADD-STUR-LDUR":1,
@@ -1195,8 +1214,8 @@
     "ADD-LDURSW-STR":14,
     "LDUR-LDR-ADD":11,
     "LDR-LDR-MUL":8,
-    "LDR-MUL-LDUR":6,
-    "STR-STR-B":6,
+    "LDR-MUL-LDUR":5,
+    "STR-STR-B":5,
     "LDUR-ADD-STUR":3,
     "B-LDR-LDR":3,
     "LDUR-CMP-CSET":3,
@@ -1213,7 +1232,7 @@
     "LDURSW-STR-BL":1
   },
   "CALL-XOR-MOV":{
-    "STR-LDR-LDR":11,
+    "STR-LDR-LDR":10,
     "LDR-STR-LDR":5,
     "LDR-LDR-ADD":4,
     "BL-ADD-STR":4,
@@ -1245,15 +1264,18 @@
     "LDUR-LDUR-MOV":1,
     "LDUR-CMP-B.GE":1,
     "SUB-MOV-STR":1,
-    "LDUR-ADD-STUR":1
+    "LDUR-ADD-STUR":1,
+    "MOV-SUB-BL":1
   },
   "MOV-ADD-POP":{
-    "STR-LDP-ADD":42,
-    "LDUR-ADD-STUR":17,
-    "STR-LDP-LDP":10,
-    "LDR-ADD-ADD":4,
-    "BL-LDR-LDR":4,
-    "LDR-MOV-MUL":4,
+    "STR-LDP-ADD":34,
+    "LDUR-ADD-STUR":14,
+    "LDR-BL-LDR":10,
+    "STR-LDP-LDP":9,
+    "LDR-ADD-ADD":3,
+    "BL-LDR-LDR":3,
+    "LDR-LDR-STR":3,
+    "LDR-MOV-MUL":3,
     "LDR-ADD-LDR":2,
     "LDR-STUR-LDUR":2,
     "CSET-AND-LDR":2,
@@ -1261,8 +1283,10 @@
     "STR-STR-STR":2,
     "LDR-ADD-LDP":2,
     "CBNZ-LDUR-CBZ":2,
-    "LDR-LDR-STR":2,
-    "LDP-LDP-RET":2
+    "LDP-LDP-RET":2,
+    "MOV-LDP-ADD":2,
+    "LDR-LDR-ADD":2,
+    "STR-STR-BL":2
   },
   "LEA-CALL-MOVAPD":{
     "ADD-LDR-STR":13,
@@ -1289,6 +1313,32 @@
     "MOV-BL-ADD":3,
     "STR-LDR-ADD":3,
     "LDUR-LDR-ADD":3
+  },
+  "MOV-MOV-POP":{
+    "STR-ADD-RET":33,
+    "LDR-ADD-RET":13,
+    "STRB-ADD-RET":7,
+    "LDR-STR-LDR":6,
+    "LDR-LDR-SDIV":4,
+    "LDR-CMP-B.GE":4,
+    "STR-BL-LDR":2,
+    "STRB-LDR-ADD":2,
+    "STRH-ADD-RET":2,
+    "ADRP-ADD-MOV":2,
+    "LDR-LDR-SUBS":2,
+    "LDR-MOV-ADD":2,
+    "SUBS-STR-LDR":2,
+    "MOV-SUBS-STR":2,
+    "LDRB-STRB-STR":2,
+    "MOV-MOV-LDR":2,
+    "STR-STRB-STR":2,
+    "BLR-MOV-MOV":2,
+    "CBNZ-LDR-CBZ":2,
+    "STRB-STRB-LDP":2,
+    "CMP-B.EQ-ADD":2,
+    "LDR-BLR-STR":2,
+    "STR-STR-ADD":2,
+    "LDUR-STR-LDR":2
   },
   "MOV-MOV-CMP":{
     "STR-LDUR-LDR":5,
@@ -1324,12 +1374,13 @@
     "STR-MOV-BL":1
   },
   "SUB-XOR-MOV":{
-    "MOV-SUB-MOV":56,
-    "STR-ADD-MOV":19,
-    "ADD-MOV-MOV":13,
+    "MOV-SUB-MOV":53,
+    "STR-ADD-MOV":18,
+    "ADD-MOV-MOV":15,
     "ADD-MOV-STUR":6,
     "ADD-ADRP-ADD":3,
-    "ADD-MOV-STR":3
+    "ADD-MOV-STR":3,
+    "ADD-MOV-ADRP":3
   },
   "CMP-MOV-JNE":{
     "LDR-CMP-STR":73,
@@ -1419,23 +1470,26 @@
     "LDUR-LDR-STR":7,
     "STR-LDR-LDR":4,
     "STR-STR-STR":4,
-    "LDUR-STR-LDUR":4,
-    "LDR-LDUR-LDR":4,
-    "ADD-STR-SUB":4,
     "LDUR-LDUR-STR":4,
-    "LDUR-LDR-STUR":4,
-    "LDUR-LDR-LDR":4,
-    "STR-LDR-STUR":4,
-    "LDR-STR-ADD":4,
-    "ADD-LDR-SUB":4,
-    "LDR-STR-LDR":4,
+    "LDUR-STR-LDUR":3,
+    "LDR-LDUR-LDR":3,
+    "ADD-STR-SUB":3,
+    "LDUR-LDR-STUR":3,
+    "LDUR-LDR-LDR":3,
+    "STR-LDR-STUR":3,
+    "LDR-STR-ADD":3,
+    "ADD-LDR-SUB":3,
+    "LDR-STR-LDR":3,
     "STR-ADD-STR":3,
     "STUR-STUR-STUR":3,
+    "ADD-STUR-STUR":3,
+    "STUR-LDUR-LDR":3,
     "STUR-STUR-LDUR":2,
     "STR-STR-LDR":2,
     "STR-B-B":2,
     "LDUR-LDUR-LDUR":2,
-    "ADD-ADRP-ADD":1
+    "ADD-ADRP-ADD":1,
+    "MOV-STR-BL":1
   },
   "LEA-MOV-LEA":{
     "STUR-STUR-STUR":21,
@@ -1641,10 +1695,10 @@
   },
   "MOV-SUB-MOV":{
     "MUL-LDUR-SUBS":17,
-    "STR-LDR-LDR":9,
-    "STR-B-LDUR":9,
-    "LDUR-LDR-STR":9,
-    "LDUR-LDR-CMP":9,
+    "STR-LDR-LDR":8,
+    "STR-B-LDUR":8,
+    "LDUR-LDR-STR":8,
+    "LDUR-LDR-CMP":8,
     "LDR-LDR-ADD":6,
     "LDUR-SUBS-STUR":5,
     "STR-BL-LDR":4,
@@ -1672,7 +1726,8 @@
     "AND-MOV-LDR":1,
     "LDR-STR-MOV":1,
     "MOV-MOV-LDR":1,
-    "STR-MOV-LDR":1
+    "STR-MOV-LDR":1,
+    "LDR-LDR-LDR":1
   },
   "ADD-MOV-JMP":{
     "LDUR-SUBS-STUR":6,
@@ -1859,37 +1914,41 @@
     "MOV-EOR-STR":1
   },
   "LEA-CALL-MOV":{
-    "ADD-STR-STR":10,
-    "LDR-STR-LDR":9,
-    "LDR-BL-ADD":6,
-    "ADD-LDR-STR":6,
-    "STR-LDR-LDR":6,
-    "MOV-LDR-BL":3,
-    "MOV-LDR-STR":3,
-    "ADD-STR-LDR":3,
-    "BL-ADD-STR":3,
-    "LDR-STR-STR":3,
-    "LDR-BL-LDR":3,
-    "CMP-B.GE-LDR":3,
-    "STUR-LDUR-STR":3,
-    "ADD-MOV-LDR":3,
-    "BL-ADD-LDR":3,
-    "MOV-BL-ADD":3,
-    "LDR-LDR-STR":3,
-    "CBZ-SUB-SUB":2,
-    "BL-LDUR-LDUR":2,
-    "STR-STR-BL":2,
-    "LDR-BL-LDUR":2,
-    "LDUR-CMP-B.GE":2,
-    "STR-MOV-LDR":2,
-    "LDURSW-SUB-MOV":2,
-    "BL-MOV-STR":2,
+    "ADD-STR-STR":8,
+    "LDR-STR-LDR":7,
+    "STR-STR-BL":5,
+    "LDR-BL-ADD":5,
+    "ADD-LDR-STR":5,
+    "STR-LDR-LDR":5,
+    "STUR-LDUR-LDR":4,
+    "MOV-BL-LDR":4,
+    "BL-STR-LDR":4,
+    "LDR-STR-MOV":4,
+    "MOV-LDR-BL":2,
+    "MOV-LDR-STR":2,
+    "ADD-STR-LDR":2,
+    "BL-ADD-STR":2,
+    "LDR-STR-STR":2,
+    "LDR-BL-LDR":2,
+    "CMP-B.GE-LDR":2,
+    "STUR-LDUR-STR":2,
+    "ADD-MOV-LDR":2,
+    "BL-ADD-LDR":2,
+    "MOV-BL-ADD":2,
+    "LDR-LDR-STR":2,
     "STR-STR-MOV":2,
-    "LDR-STR-LDURSW":2,
-    "B-ADRP-ADD":2,
-    "B.GE-LDR-ADD":2,
-    "LDR-MOV-MUL":2,
-    "MOV-MUL-SUB":2
+    "CBZ-SUB-SUB":1,
+    "BL-LDUR-LDUR":1,
+    "LDR-BL-LDUR":1,
+    "LDUR-CMP-B.GE":1,
+    "STR-MOV-LDR":1,
+    "LDURSW-SUB-MOV":1,
+    "BL-MOV-STR":1,
+    "LDR-STR-LDURSW":1,
+    "B-ADRP-ADD":1,
+    "B.GE-LDR-ADD":1,
+    "LDR-MOV-MUL":1,
+    "MOV-MUL-SUB":1
   },
   "MOV-CMP-JGE":{
     "LDR-LDR-ADD":4,
@@ -2224,10 +2283,10 @@
     "STUR-LDUR-SUBS":20
   },
   "MOV-JMP-XOR":{
-    "LDUR-SUBS-STUR":38,
-    "STR-LDR-LDR":13,
-    "LDR-ADD-MOV":13,
-    "STR-LDR-ADD":13,
+    "LDUR-SUBS-STUR":36,
+    "STR-LDR-LDR":12,
+    "LDR-ADD-MOV":12,
+    "STR-LDR-ADD":12,
     "ADD-LDR-LDR":3,
     "LDRB-MOV-ADD":3,
     "STR-SUB-STR":3,
@@ -2235,7 +2294,8 @@
     "ADRP-ADD-MOV":3,
     "ADD-STR-ADD":3,
     "MOV-STR-BL":3,
-    "LDUR-ADD-LDP":3
+    "LDUR-ADD-LDP":3,
+    "LDUR-LDRSW-MOV":3
   },
   "CALL-MOVSS-MOV":{
     "BL-LDR-LDR":28,
@@ -2478,6 +2538,177 @@
     "BL-LDR-ADRP":5,
     "STR-LDR-CBZ":5,
     "LDR-CBZ-LDR":5
+  },
+  "CALL-MOV-LEA":{
+    "STR-STR-BL":24,
+    "LDR-STUR-LDR":12,
+    "LDR-CMP-B.GE":8,
+    "SUBS-ADD-STR":8,
+    "STR-BL-LDR":4,
+    "STUR-B-LDURB":4,
+    "LDUR-LDUR-CMP":4,
+    "ADRP-ADD-STR":4,
+    "ADD-MOV-MOV":2,
+    "LDR-LDR-CMP":2,
+    "STR-MOV-STR":2,
+    "LDR-MOV-LDR":2,
+    "ADD-STP-MOV":2,
+    "LDP-STP-LDR":2,
+    "ADD-MOV-BL":2,
+    "LDR-ADRP-ADRP":2,
+    "ADRP-ADRP-ADD":2,
+    "LDR-ADRP-ADD":2,
+    "STR-BL-ADRP":2,
+    "ADD-STR-BL":2,
+    "LDR-MOV-MOV":2,
+    "LDR-ADD-LDR":2,
+    "ADD-LDR-LDP":2,
+    "CMN-B.EQ-LDP":2
+  },
+  "SUB-MOV-TEST":{
+    "STP-MOV-BL":79,
+    "CBZ-BL-LDR":7,
+    "STR-MOV-CBZ":7,
+    "LDR-CBZ-LDRB":7
+  },
+  "XOR-MOV-POP":{
+    "MOV-MOV-MOV":85,
+    "AND-LDR-EOR":8,
+    "STR-MOV-ADD":8
+  },
+  "POP-MOV-AND":{
+    "MOV-LDR-ADD":100
+  },
+  "AND-PUSH-PUSH":{
+    "ADD-MOV-MOVZ":100
+  },
+  "CALL-HLT-NOP":{
+    "MOVZ-MOVK-MOVK":100
+  },
+  "PUSH-MOV-CMP":{
+    "ADRP-ADD-ADRP":92,
+    "SUB-STP-ADD":8
+  },
+  "CMP-MOV-JE":{
+    "ADRP-ADD-CMP":31,
+    "LDUR-STR-CBZ":11,
+    "CMP-STR-B.EQ":6,
+    "LDR-STR-CBZ":6,
+    "LDR-MOV-LDR":6,
+    "MOV-BL-AND":3,
+    "ADD-ADD-ADD":3,
+    "LDUR-STUR-LDR":3,
+    "STR-LDR-STR":3,
+    "LSL-ASR-LDR":3,
+    "STR-ADD-STR":3,
+    "AND-LDR-CMP":3,
+    "ADRP-ADRP-LDR":3,
+    "B.EQ-CMP-B.EQ":3,
+    "CBZ-LDR-MOV":3,
+    "CMP-B.EQ-MOV":3,
+    "LDRB-AND-CBZ":3,
+    "STR-STR-STR":3,
+    "ADRP-LDRB-LDR":3
+  },
+  "JE-MOV-TEST":{
+    "CMP-B.EQ-ADRP":79,
+    "TBNZ-B-LDR":14,
+    "LDR-ADD-STR":7
+  },
+  "TEST-JE-POP":{
+    "ADRP-LDR-CBZ":92,
+    "ADD-LDRB-CBZ":8
+  },
+  "POP-MOV-JMP":{
+    "CBZ-BR-RET":100
+  },
+  "MOV-PUSH-SUB":{
+    "ADRP-ADD-ADRP":85,
+    "STP-MOV-ADD":8,
+    "LDR-STP-ADRP":8
+  },
+  "SUB-MOV-SAR":{
+    "ADRP-ADD-SUB":100
+  },
+  "SAR-MOV-SHR":{
+    "SUB-ASR-ADD":100
+  },
+  "SHR-ADD-SAR":{
+    "ADD-ASR-CBZ":100
+  },
+  "SAR-JE-MOV":{
+    "CBZ-ADRP-LDR":100
+  },
+  "CMP-JNE-PUSH":{
+    "STP-MOV-STR":100
+  },
+  "PUSH-MOV-CALL":{
+    "STR-ADRP-LDRB":48,
+    "STP-MOV-BL":43,
+    "STP-MOV-STR":9
+  },
+  "CALL-POP-RET":{
+    "BL-LDP-RET":67,
+    "ADD-STUR-MOV":13,
+    "ADRP-ADD-ADRP":7,
+    "LDR-MOV-BL":7,
+    "STR-BLR-LDR":7
+  },
+  "CALL-MOV-POP":{
+    "LDRB-CBNZ-BL":53,
+    "STP-ADD-STR":11,
+    "STR-ADD-STP":11,
+    "LDR-LDR-CMN":11,
+    "STR-MOV-BL":11,
+    "BL-MOV-LDR":5
+  },
+  "NOP-REP-NOP":{
+    "STRB-LDR-LDP":100
+  },
+  "PUSH-LEA-PUSH":{
+    "ADRP-ADD-ADD":45,
+    "ADD-STP-SUB":45,
+    "STP-MOV-STP":9
+  },
+  "MOV-SUB-SUB":{
+    "MOV-MOV-ASR":56,
+    "ADD-LDR-BL":22,
+    "STR-LDR-ADD":22
+  },
+  "SUB-SAR-CALL":{
+    "ASR-MOV-BL":100
+  },
+  "CALL-TEST-JE":{
+    "BL-CBZ-STR":63,
+    "BL-TST-B.EQ":25,
+    "BL-BL-ADRP":6,
+    "CMP-B.LO-LDR":6
+  },
+  "JE-XOR-NOP":{
+    "STR-MOV-LDR":100
+  },
+  "CALL-ADD-CMP":{
+    "ADD-BLR-CMP":100
+  },
+  "CMP-JNE-ADD":{
+    "CMP-B.NE-LDR":100
+  },
+  "ADD-POP-POP":{
+    "LDR-LDP-LDP":26,
+    "LDP-LDP-RET":16,
+    "TST-B.EQ-LDR":11,
+    "MOV-LDR-LDR":8,
+    "LDR-MOV-LDR":8,
+    "RET-ADRP-MOV":5,
+    "MOV-LDR-ORR":5,
+    "AND-LDR-LDR":3,
+    "ADD-STR-ADD":3,
+    "ADD-LDR-ADD":3,
+    "LDR-LDUR-ADD":3,
+    "LDR-LDR-LDP":3,
+    "LDR-LDR-EOR":3,
+    "BL-LDR-MOV":3,
+    "LDP-RET-BL":3
   },
   "MOV-JMP-JMP":{
     "LDR-LDR-LDR":6,
@@ -2738,9 +2969,10 @@
     "STR-LDR-B":1
   },
   "CALL-MOV-CALL":{
-    "LDP-ORR-STR":10,
-    "BL-LDR-LDUR":9,
-    "MOV-BL-MOV":7,
+    "LDP-ORR-STR":9,
+    "BL-LDR-LDUR":8,
+    "MOV-BL-MOV":6,
+    "BL-STUR-LDR":6,
     "STR-TBZ-BL":5,
     "STR-TBNZ-BL":5,
     "LDUR-ADD-LDP":4,
@@ -2781,9 +3013,9 @@
     "CMP-CSEL-BL":1
   },
   "PUSH-MOV-MOVABS":{
-    "SUB-STP-ADD":80,
-    "STP-MOV-ADRP":10,
-    "SUB-ADRP-ADD":10
+    "SUB-STP-ADD":47,
+    "STP-MOV-ADRP":41,
+    "SUB-ADRP-ADD":12
   },
   "MOVSX-CMP-JL":{
     "CMP-CSET-TBNZ":89,
@@ -2931,18 +3163,21 @@
     "LDR-LDUR-LDR":100
   },
   "MOV-LEA-LEA":{
-    "B-LDUR-LDR":30,
-    "LDR-CMP-B.GE":30,
-    "STUR-STUR-STUR":7,
-    "STR-ADRP-STP":4,
-    "STR-ADD-STP":4,
-    "ADD-STP-LDR":4,
-    "STP-ADD-STP":4,
-    "STP-ADD-MOV":4,
-    "MOV-MOV-LDR":4,
-    "LDR-BL-ADRP":4,
-    "LDR-ADD-BL":4,
-    "ADD-LDR-ADD":4
+    "B-LDUR-LDR":18,
+    "LDR-CMP-B.GE":18,
+    "SUB-STUR-STR":13,
+    "BL-STR-LDUR":13,
+    "LDR-STR-MOV":13,
+    "STUR-STUR-STUR":4,
+    "STR-ADRP-STP":2,
+    "STR-ADD-STP":2,
+    "ADD-STP-LDR":2,
+    "STP-ADD-STP":2,
+    "STP-ADD-MOV":2,
+    "MOV-MOV-LDR":2,
+    "LDR-BL-ADRP":2,
+    "LDR-ADD-BL":2,
+    "ADD-LDR-ADD":2
   },
   "MOVSS-CALL-MOV":{
     "LDR-LDR-LDR":100
@@ -3197,12 +3432,13 @@
     "B-LDR-MOV":25
   },
   "MOV-AND-CMP":{
-    "MOV-CMP-CSEL":40,
-    "CSEL-STR-LDR":20,
-    "CMP-CSEL-STR":20,
+    "MOV-CMP-CSEL":38,
+    "CSEL-STR-LDR":19,
+    "CMP-CSEL-STR":19,
     "AND-LDP-ADD":10,
     "AND-MOV-SXTW":5,
-    "ADD-STR-ADD":5
+    "ADD-STR-ADD":5,
+    "LDR-ASR-LDR":5
   },
   "JMP-XOR-CMP":{
     "LDR-LDR-STR":50,
@@ -3377,7 +3613,7 @@
     "STR-MOV-LDR":1
   },
   "CMP-MOV-MOV":{
-    "TBNZ-B-LDR":13,
+    "TBNZ-B-LDR":12,
     "LDR-ADD-STR":9,
     "SUBS-ADD-STR":6,
     "LDR-TBNZ-B":6,
@@ -3414,7 +3650,8 @@
     "STR-STR-MOV":2,
     "STR-CBZ-LDRB":2,
     "CMP-B.LE-LDR":2,
-    "CMP-CSEL-MOV":2
+    "CMP-CSEL-MOV":2,
+    "LDR-ADD-AND":2
   },
   "MOV-MOV-CMOVE":{
     "LDR-ADD-STR":33,
@@ -3567,14 +3804,15 @@
     "LDR-STRB-ADD":3
   },
   "LEA-CALL-LEA":{
-    "STR-LDR-LDR":31,
-    "ADD-MOV-STR":15,
-    "ADD-LDR-MOV":15,
-    "ADD-LDR-MUL":15,
-    "STUR-STUR-LDUR":8,
-    "LDUR-LDUR-LDR":8,
-    "MOV-BL-LDR":4,
-    "BL-ADRP-STR":4
+    "STR-LDR-LDR":25,
+    "STR-STR-STR":19,
+    "ADD-MOV-STR":13,
+    "ADD-LDR-MOV":13,
+    "ADD-LDR-MUL":13,
+    "STUR-STUR-LDUR":6,
+    "LDUR-LDUR-LDR":6,
+    "MOV-BL-LDR":3,
+    "BL-ADRP-STR":3
   },
   "MOVSD-MOV-LEA":{
     "LDR-STR-LDR":29,
@@ -3822,30 +4060,6 @@
     "ADD-STR-STR":1,
     "TBNZ-B-LDURSB":1
   },
-  "MOV-MOV-POP":{
-    "LDR-ADD-RET":18,
-    "STR-ADD-RET":15,
-    "STRB-ADD-RET":10,
-    "LDR-STR-LDR":8,
-    "LDR-LDR-SDIV":5,
-    "LDR-CMP-B.GE":5,
-    "STR-BL-LDR":3,
-    "STRB-LDR-ADD":3,
-    "STRH-ADD-RET":3,
-    "ADRP-ADD-MOV":3,
-    "LDR-LDR-SUBS":3,
-    "LDR-MOV-ADD":3,
-    "SUBS-STR-LDR":3,
-    "MOV-SUBS-STR":3,
-    "LDRB-STRB-STR":3,
-    "MOV-MOV-LDR":3,
-    "STR-STRB-STR":3,
-    "BLR-MOV-MOV":3,
-    "CBNZ-LDR-CBZ":3,
-    "STRB-STRB-LDP":3,
-    "CMP-B.EQ-ADD":3,
-    "LDR-BLR-STR":3
-  },
   "MOVAPS-MOVAPS-MOVAPS":{
     "STR-LDR-LDR":37,
     "STR-LDR-STR":16,
@@ -4046,14 +4260,15 @@
     "LDUR-LDURSW-BL":6
   },
   "JNE-JMP-JMP":{
-    "STR-CBZ-MOV":29,
-    "LDR-TBNZ-B":29,
-    "BL-TBNZ-B":10,
-    "LDR-LDURSW-LDR":10,
-    "STRB-MOV-STRB":10,
-    "STR-ADD-STR":5,
-    "LDR-STR-LDR":5,
-    "STR-LDR-STR":5
+    "STR-CBZ-MOV":22,
+    "LDR-TBNZ-B":22,
+    "LDR-BL-STUR":22,
+    "BL-TBNZ-B":7,
+    "LDR-LDURSW-LDR":7,
+    "STRB-MOV-STRB":7,
+    "STR-ADD-STR":4,
+    "LDR-STR-LDR":4,
+    "STR-LDR-STR":4
   },
   "MOVABS-CALL-MOV":{
     "B-B-ADRP":8,
@@ -4138,23 +4353,6 @@
     "MUL-MOV-UDIV":6,
     "MOV-MUL-MOV":6
   },
-  "ADD-POP-POP":{
-    "LDP-LDP-RET":19,
-    "LDR-LDP-LDP":13,
-    "TST-B.EQ-LDR":13,
-    "MOV-LDR-LDR":9,
-    "LDR-MOV-LDR":9,
-    "RET-ADRP-MOV":6,
-    "MOV-LDR-ORR":6,
-    "AND-LDR-LDR":3,
-    "ADD-STR-ADD":3,
-    "ADD-LDR-ADD":3,
-    "LDR-LDUR-ADD":3,
-    "LDR-LDR-LDP":3,
-    "LDR-LDR-EOR":3,
-    "BL-LDR-MOV":3,
-    "LDP-RET-BL":3
-  },
   "SUB-MOV-LEA":{
     "STP-ADRP-MOV":50,
     "MOV-MOV-LDR":33,
@@ -4232,86 +4430,175 @@
     "STR-TBZ-BL":4,
     "STR-TBNZ-BL":4
   },
-  "SUB-MOV-TEST":{
-    "STP-MOV-BL":63,
-    "CBZ-BL-LDR":13,
-    "STR-MOV-CBZ":13,
-    "LDR-CBZ-LDRB":13
+  "MOVABS-CALL-POP":{
+    "ADRP-ADD-BL":100
   },
-  "XOR-MOV-POP":{
-    "MOV-MOV-MOV":83,
-    "AND-LDR-EOR":17
+  "SUB-MOV-CALL":{
+    "ADD-MOV-SUB":50,
+    "ADD-MOV-ADRP":17,
+    "LDR-SUBS-BL":17,
+    "ADD-STUR-BL":8,
+    "ADD-MOV-MOV":8
   },
-  "POP-MOV-AND":{
-    "MOV-LDR-ADD":100
+  "CALL-TEST-JNE":{
+    "BL-LDR-LDR":23,
+    "ADD-ADRP-ADD":15,
+    "MOV-MOV-MOV":8,
+    "MOV-LDR-BL":8,
+    "BL-TBNZ-LDUR":8,
+    "MOV-MUL-ADD":4,
+    "B-LDUR-LDRB":4,
+    "ADD-MOV-MOV":4,
+    "STRB-B-LDR":4,
+    "ADRP-ADD-LDRB":4,
+    "TBNZ-B-ADRP":4,
+    "MOV-BL-MOV":4,
+    "MOV-STR-MOV":4,
+    "BL-LDR-LDUR":4,
+    "BL-MOV-BL":4
   },
-  "AND-PUSH-PUSH":{
-    "ADD-MOV-MOVZ":100
+  "XOR-MOV-CALL":{
+    "ADD-STR-MOV":75,
+    "LDP-RET-LDR":25
   },
-  "CALL-HLT-NOP":{
-    "MOVZ-MOVK-MOVK":100
+  "MOV-LEA-CALL":{
+    "LDUR-STR-STR":7,
+    "STR-LDR-ADD":5,
+    "BL-LDR-ADD":5,
+    "LDR-BL-ADD":5,
+    "MOV-STR-BL":5,
+    "ADD-STR-STR":5,
+    "B.GE-LDR-LDR":5,
+    "LDR-STR-ADD":5,
+    "STR-LDR-LDR":5,
+    "ADD-STR-ADD":5,
+    "LDR-BL-LDR":5,
+    "LDR-LDR-ADD":5,
+    "LDR-LDR-STR":5,
+    "LDUR-LDUR-LDUR":2,
+    "ADD-MOV-STR":2,
+    "LDUR-STR-LDUR":2,
+    "STR-STR-B":2,
+    "STUR-STUR-LDUR":2,
+    "MOV-STR-STR":2,
+    "STR-BL-LDURSW":2,
+    "BL-STR-LDR":2,
+    "STR-STR-STR":2,
+    "ADD-MOV-MOV":1,
+    "MOV-MOV-BL":1,
+    "LDR-STR-LDR":1,
+    "B-LDR-STR":1,
+    "STR-LDR-MOV":1,
+    "STR-LDR-STR":1,
+    "STR-B-LDR":1,
+    "LDP-STR-LDR":1,
+    "MOV-BL-LDR":1
   },
-  "PUSH-MOV-CMP":{
-    "ADRP-ADD-ADRP":83,
-    "SUB-STP-ADD":17
+  "RET-NOP-NOP":{
+    "LDR-LDR-BL":18,
+    "AND-LDP-ADD":18,
+    "LDR-LDR-ADD":12,
+    "MOV-LDR-LDP":12,
+    "MOV-ADD-RET":6,
+    "STR-LDUR-SUB":6,
+    "B-LDUR-LDP":3,
+    "STR-LDR-ADD":3,
+    "STR-B-MOV":3,
+    "B.GE-LDR-STR":3,
+    "MUL-SUBS-STR":3,
+    "LDURSW-LDR-BL":3,
+    "LDR-LDR-STR":3,
+    "SDIV-MUL-SUBS":3,
+    "LDR-BL-LDR":3,
+    "LDR-LDP-RET":3
   },
-  "CMP-MOV-JE":{
-    "ADRP-ADD-CMP":17,
-    "LDUR-STR-CBZ":14,
-    "CMP-STR-B.EQ":7,
-    "LDR-STR-CBZ":7,
-    "LDR-MOV-LDR":7,
-    "MOV-BL-AND":3,
-    "ADD-ADD-ADD":3,
-    "LDUR-STUR-LDR":3,
+  "MOV-MOV-MOVSXD":{
+    "LDR-LDRSW-STR":19,
+    "MOV-SXTW-MOV":6,
+    "LDR-STR-LDUR":6,
+    "B.HS-LDR-ADD":6,
+    "LDUR-MUL-LDR":6,
+    "ADD-MOV-BL":3,
     "STR-LDR-STR":3,
-    "LSL-ASR-LDR":3,
-    "STR-ADD-STR":3,
-    "AND-LDR-CMP":3,
-    "ADRP-ADRP-LDR":3,
-    "B.EQ-CMP-B.EQ":3,
-    "CBZ-LDR-MOV":3,
-    "CMP-B.EQ-MOV":3,
-    "LDRB-AND-CBZ":3,
+    "B-LDUR-LDR":3,
+    "LDR-MOV-STR":3,
+    "STR-LDR-CMP":3,
+    "LDRB-STRB-B":3,
+    "LDR-STR-ADRP":3,
     "STR-STR-STR":3,
-    "ADRP-LDRB-LDR":3
+    "B.GE-LDR-CMP":3,
+    "MOV-STR-CBZ":3,
+    "LDR-MOV-MOV":3,
+    "LDR-STUR-LDR":3,
+    "LDR-LDRSW-ADD":3,
+    "CBZ-LDUR-LDURSW":3,
+    "ADD-ADD-STR":3,
+    "MOV-STR-STR":3,
+    "LDR-STR-B":3
   },
-  "JE-MOV-TEST":{
-    "CMP-B.EQ-ADRP":63,
-    "TBNZ-B-LDR":25,
-    "LDR-ADD-STR":13
+  "MOVSXD-MOV-POP":{
+    "STR-ADD-RET":100
   },
-  "TEST-JE-POP":{
-    "ADRP-LDR-CBZ":83,
-    "ADD-LDRB-CBZ":17
+  "LEA-CALL-AND":{
+    "LDUR-BL-STR":100
   },
-  "POP-MOV-JMP":{
-    "CBZ-BR-RET":100
+  "AND-MOVZX-ADD":{
+    "STR-LDR-LDR":67,
+    "LDP-ADD-RET":22,
+    "AND-LDP-ADD":11
   },
-  "MOV-PUSH-SUB":{
-    "ADRP-ADD-ADRP":71,
-    "STP-MOV-ADD":14,
-    "LDR-STP-ADRP":14
+  "MOV-CALL-LEA":{
+    "MOV-STR-STR":26,
+    "BL-ADD-MOV":17,
+    "ADD-MOV-MOV":9,
+    "MOV-BL-LDR":9,
+    "STR-CBNZ-MOV":4,
+    "ADD-STR-ADRP":4,
+    "AND-MOV-STR":4,
+    "MOVK-STR-MOV":4,
+    "STUR-STR-MOV":4,
+    "STUR-LDR-LDUR":4,
+    "CSET-AND-MOV":4,
+    "EOR-CBNZ-LDP":4,
+    "ADRP-ADRP-ADRP":4
   },
-  "SUB-MOV-SAR":{
-    "ADRP-ADD-SUB":100
+  "MOV-CALL-IMUL":{
+    "MOVK-SUB-ADD":100
   },
-  "SAR-MOV-SHR":{
-    "SUB-ASR-ADD":100
+  "IMUL-MOV-LEA":{
+    "ADD-STUR-LDUR":100
   },
-  "SHR-ADD-SAR":{
-    "ADD-ASR-CBZ":100
+  "MOV-CMP-SETL":{
+    "LDR-STR-MOV":50,
+    "STR-STR-STR":8,
+    "MOV-MOVK-STR":8,
+    "B-LDR-ADD":8,
+    "AND-MOV-CMP":8,
+    "LDR-STR-LDR":8,
+    "LDR-LDR-SUB":8
   },
-  "SAR-JE-MOV":{
-    "CBZ-ADRP-LDR":100
+  "SETL-AND-MOVZX":{
+    "MOV-BL-LDR":32,
+    "ADD-STR-B":11,
+    "STR-LDR-ADD":5,
+    "MOV-STR-BL":5,
+    "LDR-STR-STR":5,
+    "STR-STR-STR":5,
+    "STR-MOV-MOVK":5,
+    "STR-MOV-STR":5,
+    "CMP-CSET-AND":5,
+    "LDR-STR-LDR":5,
+    "STR-ADD-STR":5,
+    "AND-ADRP-ADD":5,
+    "SUB-ADRP-ADD":5
   },
-  "CMP-JNE-PUSH":{
-    "STP-MOV-STR":100
-  },
-  "PUSH-MOV-CALL":{
-    "STR-ADRP-LDRB":45,
-    "STP-MOV-BL":36,
-    "STP-MOV-STR":18
+  "MOVZX-ADD-POP":{
+    "LDR-CMP-CSET":40,
+    "AND-STURB-LDURB":27,
+    "STR-MOV-LDR":13,
+    "CSET-EOR-AND":7,
+    "LDP-ADD-RET":7,
+    "CBZ-ADD-LDRB":7
   },
   "MOVABS-MOV-CALL":{
     "ADD-ADRP-ADD":14,
@@ -4409,73 +4696,11 @@
     "LDURSW-LDR-STR":18,
     "STUR-LDUR-SUB":18
   },
-  "CALL-POP-RET":{
-    "BL-LDP-RET":44,
-    "ADD-STUR-MOV":22,
-    "ADRP-ADD-ADRP":11,
-    "LDR-MOV-BL":11,
-    "STR-BLR-LDR":11
-  },
-  "CALL-MOV-POP":{
-    "LDRB-CBNZ-BL":31,
-    "STP-ADD-STR":15,
-    "STR-ADD-STP":15,
-    "LDR-LDR-CMN":15,
-    "STR-MOV-BL":15,
-    "BL-MOV-LDR":8
-  },
-  "NOP-REP-NOP":{
-    "STRB-LDR-LDP":100
-  },
-  "CALL-TEST-JNE":{
-    "ADD-ADRP-ADD":20,
-    "MOV-MOV-MOV":10,
-    "MOV-LDR-BL":10,
-    "BL-TBNZ-LDUR":10,
-    "MOV-MUL-ADD":5,
-    "B-LDUR-LDRB":5,
-    "ADD-MOV-MOV":5,
-    "STRB-B-LDR":5,
-    "ADRP-ADD-LDRB":5,
-    "TBNZ-B-ADRP":5,
-    "MOV-BL-MOV":5,
-    "MOV-STR-MOV":5,
-    "BL-LDR-LDUR":5,
-    "BL-MOV-BL":5
-  },
   "PUSH-MOV-XOR":{
-    "SUB-STP-ADD":40,
-    "SUB-MOV-STR":20,
-    "SUB-MOV-STRB":20,
-    "SUB-MOV-STRH":20
-  },
-  "PUSH-LEA-PUSH":{
-    "ADRP-ADD-ADD":40,
-    "ADD-STP-SUB":40,
-    "STP-MOV-STP":20
-  },
-  "MOV-SUB-SUB":{
-    "MOV-MOV-ASR":33,
-    "ADD-LDR-BL":33,
-    "STR-LDR-ADD":33
-  },
-  "SUB-SAR-CALL":{
-    "ASR-MOV-BL":100
-  },
-  "CALL-TEST-JE":{
-    "BL-CBZ-STR":40,
-    "BL-TST-B.EQ":40,
-    "BL-BL-ADRP":10,
-    "CMP-B.LO-LDR":10
-  },
-  "JE-XOR-NOP":{
-    "STR-MOV-LDR":100
-  },
-  "CALL-ADD-CMP":{
-    "ADD-BLR-CMP":100
-  },
-  "CMP-JNE-ADD":{
-    "CMP-B.NE-LDR":100
+    "SUB-STP-ADD":36,
+    "SUB-MOV-STR":27,
+    "SUB-MOV-STRB":18,
+    "SUB-MOV-STRH":18
   },
   "IMUL-MOVABS-ADD":{
     "LDUR-ADRP-ADD":10,
@@ -4944,13 +5169,6 @@
     "LDR-LDR-LDR":5,
     "LDR-MOV-LDR":5
   },
-  "MOVZX-ADD-POP":{
-    "AND-STURB-LDURB":44,
-    "STR-MOV-LDR":22,
-    "CSET-EOR-AND":11,
-    "LDP-ADD-RET":11,
-    "CBZ-ADD-LDRB":11
-  },
   "TEST-JE-MOV":{
     "LDR-LDRB-TBNZ":13,
     "TBNZ-B-LDR":13,
@@ -5133,39 +5351,10 @@
     "LDR-LDRSW-MOV":2,
     "TST-CSET-STR":2,
     "ADD-ADD-LDRSW":2,
-    "LDR-BL-MOV":2
-  },
-  "MOV-LEA-CALL":{
-    "STR-LDR-ADD":5,
-    "BL-LDR-ADD":5,
-    "LDR-BL-ADD":5,
-    "MOV-STR-BL":5,
-    "ADD-STR-STR":5,
-    "B.GE-LDR-LDR":5,
-    "LDR-STR-ADD":5,
-    "STR-LDR-LDR":5,
-    "ADD-STR-ADD":5,
-    "LDR-BL-LDR":5,
-    "LDR-LDR-ADD":5,
-    "LDR-LDR-STR":5,
-    "LDUR-LDUR-LDUR":3,
-    "ADD-MOV-STR":3,
-    "LDUR-STR-LDUR":3,
-    "STR-STR-B":3,
-    "STUR-STUR-LDUR":3,
-    "MOV-STR-STR":3,
-    "STR-BL-LDURSW":3,
-    "BL-STR-LDR":3,
-    "STR-STR-STR":3,
-    "ADD-MOV-MOV":1,
-    "MOV-MOV-BL":1,
-    "LDR-STR-LDR":1,
-    "B-LDR-STR":1,
-    "STR-LDR-MOV":1,
-    "STR-LDR-STR":1,
-    "STR-B-LDR":1,
-    "LDP-STR-LDR":1,
-    "MOV-BL-LDR":1
+    "LDR-BL-MOV":2,
+    "STR-LDR-LDR":2,
+    "MOV-STR-BL":2,
+    "MOV-ADRP-ADD":2
   },
   "JMP-JMP-XOR":{
     "LDR-BL-ADD":50,
@@ -5361,26 +5550,11 @@
     "ADD-LDR-STR":25
   },
   "MOV-JMP-ADD":{
-    "STR-STR-STR":50,
-    "LDURSW-STR-BL":25,
-    "CMP-B.NE-LDURB":13,
-    "B.EQ-CMP-B.EQ":13
-  },
-  "RET-NOP-NOP":{
-    "LDR-LDR-ADD":18,
-    "MOV-LDR-LDP":18,
-    "MOV-ADD-RET":9,
-    "STR-LDUR-SUB":9,
-    "B-LDUR-LDP":5,
-    "STR-LDR-ADD":5,
-    "STR-B-MOV":5,
-    "B.GE-LDR-STR":5,
-    "MUL-SUBS-STR":5,
-    "LDURSW-LDR-BL":5,
-    "LDR-LDR-STR":5,
-    "SDIV-MUL-SUBS":5,
-    "LDR-BL-LDR":5,
-    "LDR-LDP-RET":5
+    "STR-STR-STR":44,
+    "LDURSW-STR-BL":22,
+    "CMP-B.NE-LDURB":11,
+    "B.EQ-CMP-B.EQ":11,
+    "MOV-BL-LDUR":11
   },
   "MOV-IDIV-SUB":{
     "STR-LDR-LDR":33,
@@ -5441,30 +5615,6 @@
     "BL-ADD-LDR":22,
     "LDR-SUBS-ADD":22,
     "BL-LDR-SUBS":11
-  },
-  "CALL-MOV-LEA":{
-    "LDR-CMP-B.GE":13,
-    "SUBS-ADD-STR":13,
-    "STR-BL-LDR":6,
-    "STUR-B-LDURB":6,
-    "LDUR-LDUR-CMP":6,
-    "ADRP-ADD-STR":6,
-    "ADD-MOV-MOV":3,
-    "LDR-LDR-CMP":3,
-    "STR-MOV-STR":3,
-    "LDR-MOV-LDR":3,
-    "ADD-STP-MOV":3,
-    "LDP-STP-LDR":3,
-    "ADD-MOV-BL":3,
-    "LDR-ADRP-ADRP":3,
-    "ADRP-ADRP-ADD":3,
-    "LDR-ADRP-ADD":3,
-    "STR-BL-ADRP":3,
-    "ADD-STR-BL":3,
-    "LDR-MOV-MOV":3,
-    "LDR-ADD-LDR":3,
-    "ADD-LDR-LDP":3,
-    "CMN-B.EQ-LDP":3
   },
   "CALL-MOV-CMP":{
     "STR-LDUR-CMP":11,
@@ -5570,6 +5720,7 @@
     "ADD-BLR-MOV":17,
     "ADD-STRB-RET":13,
     "SUBS-CMP-B.GE":8,
+    "STR-ADD-RET":8,
     "STP-STP-LDR":8,
     "LDR-MOV-BL":4,
     "LDRB-EOR-STRB":4,
@@ -5581,23 +5732,7 @@
     "LDR-LDR-SUBS":4,
     "LDR-MOV-ADD":4,
     "LDR-ADD-RET":4,
-    "STR-ADD-RET":4,
-    "ADD-RET-":4,
     "ADRP-ADD-BL":4
-  },
-  "MOV-CALL-LEA":{
-    "BL-ADD-MOV":24,
-    "ADD-MOV-MOV":12,
-    "MOV-BL-LDR":12,
-    "STR-CBNZ-MOV":6,
-    "ADD-STR-ADRP":6,
-    "AND-MOV-STR":6,
-    "MOVK-STR-MOV":6,
-    "STUR-STR-MOV":6,
-    "STUR-LDR-LDUR":6,
-    "CSET-AND-MOV":6,
-    "EOR-CBNZ-LDP":6,
-    "ADRP-ADRP-ADRP":6
   },
   "JE-LEA-MOV":{
     "CBZ-LDR-MOV":44,
@@ -5817,6 +5952,18 @@
   },
   "RET-CALL-NOP":{
     "EOR-LDR-CBNZ":100
+  },
+  "JMP-CALL-XOR":{
+    "STUR-BL-ADD":100
+  },
+  "CALL-NOP-NOP":{
+    "MOV-SUB-BL":31,
+    "LDP-B-BL":23,
+    "TBZ-BL-MOV":15,
+    "LDUR-LDR-BL":8,
+    "AND-B-BL":8,
+    "STR-MOV-BL":8,
+    "STR-TBNZ-BL":8
   },
   "CALL-MOV-MOVZX":{
     "STR-STR-STR":16,
@@ -6580,16 +6727,9 @@
     "B.EQ-STR-LDP":2,
     "CMP-B.LS-LDR":2
   },
-  "CALL-NOP-NOP":{
-    "LDP-B-BL":33,
-    "TBZ-BL-MOV":22,
-    "LDUR-LDR-BL":11,
-    "AND-B-BL":11,
-    "STR-MOV-BL":11,
-    "STR-TBNZ-BL":11
-  },
   "SUB-MOV-MOVABS":{
-    "ADD-ADRP-ADD":100
+    "ADD-ADRP-ADD":67,
+    "ADD-MOV-ADRP":33
   },
   "SUB-MOVABS-MOV":{
     "ADD-ADRP-ADD":100
@@ -6822,16 +6962,17 @@
     "ADRP-ADD-STR":13
   },
   "CALL-MOV-MOVSXD":{
-    "ADRP-ADD-BL":14,
-    "LDR-LDURSW-LDR":14,
-    "B.EQ-MOV-STR":14,
-    "STR-BL-LDR":14,
+    "ADRP-ADD-BL":13,
+    "LDR-LDURSW-LDR":13,
+    "B.EQ-MOV-STR":13,
+    "STR-BL-LDR":13,
     "LSL-LSL-MOV":7,
     "CMP-B.GE-STUR":7,
     "LDR-LDRH-LDRB":7,
     "STR-LDR-LDR":7,
     "LDR-LDR-EOR":7,
-    "MOV-BL-STR":7
+    "MOV-BL-STR":7,
+    "STUR-MOV-STR":7
   },
   "MOVZX-MOVZX-SHL":{
     "LDUR-ADRP-ADD":20,
@@ -6898,20 +7039,6 @@
     "STR-B-ADD":13,
     "LDR-ADD-ADD":13,
     "MOV-SXTW-EOR":13
-  },
-  "SETL-AND-MOVZX":{
-    "ADD-STR-B":15,
-    "STR-LDR-ADD":8,
-    "MOV-STR-BL":8,
-    "LDR-STR-STR":8,
-    "STR-STR-STR":8,
-    "STR-MOV-MOVK":8,
-    "STR-MOV-STR":8,
-    "CMP-CSET-AND":8,
-    "LDR-STR-LDR":8,
-    "STR-ADD-STR":8,
-    "AND-ADRP-ADD":8,
-    "SUB-ADRP-ADD":8
   },
   "CMP-SETNE-AND":{
     "CSET-AND-MOV":6,
@@ -7182,8 +7309,8 @@
     "MUL-SUBS-MOV":8
   },
   "MOV-JE-MOV":{
-    "LDR-STR-STR":12,
-    "STR-STR-STR":12,
+    "LDR-STR-STR":11,
+    "STR-STR-STR":11,
     "LDRSW-ADD-LDR":6,
     "LDR-LDRB-AND":6,
     "ADRP-ADD-LDR":6,
@@ -7196,7 +7323,8 @@
     "CBZ-LDAXR-ADD":6,
     "LDR-CBNZ-MOV":6,
     "CMP-B.EQ-MOV":6,
-    "B.NE-MOV-CMP":6
+    "B.NE-MOV-CMP":6,
+    "AND-STR-STR":6
   },
   "XOR-MOV-MOVSX":{
     "MOV-MOV-BL":12,
@@ -7577,7 +7705,8 @@
     "STR-STR-LDR":3
   },
   "MOVABS-ADD-MOV":{
-    "STR-LDR-LDR":13,
+    "STR-LDR-LDR":12,
+    "ADD-ADD-STR":12,
     "B.GE-STR-LDR":6,
     "ASR-LDR-CMP":6,
     "MOV-SXTW-MOV":6,
@@ -7590,30 +7719,7 @@
     "MOV-MUL-ADRP":6,
     "ASR-LDR-BL":6,
     "CMP-CSET-AND":6,
-    "ADD-STR-LDR":6,
-    "ADD-ADD-STR":6
-  },
-  "MOV-MOV-MOVSXD":{
-    "MOV-SXTW-MOV":8,
-    "LDR-STR-LDUR":8,
-    "B.HS-LDR-ADD":8,
-    "LDUR-MUL-LDR":8,
-    "ADD-MOV-BL":4,
-    "STR-LDR-STR":4,
-    "B-LDUR-LDR":4,
-    "LDR-MOV-STR":4,
-    "STR-LDR-CMP":4,
-    "LDRB-STRB-B":4,
-    "LDR-STR-ADRP":4,
-    "STR-STR-STR":4,
-    "B.GE-LDR-CMP":4,
-    "MOV-STR-CBZ":4,
-    "LDR-MOV-MOV":4,
-    "LDR-STUR-LDR":4,
-    "LDR-LDRSW-ADD":4,
-    "CBZ-LDUR-LDURSW":4,
-    "ADD-ADD-STR":4,
-    "MOV-STR-STR":4
+    "ADD-STR-LDR":6
   },
   "CMP-JE-MOVABS":{
     "CBZ-LDR-MOV":18,
@@ -8008,10 +8114,11 @@
     "MOV-STR-LDR":100
   },
   "MOVABS-CALL-XOR":{
-    "ADRP-ADD-MOV":40,
-    "MOV-MOV-ADRP":20,
-    "ADD-ADRP-ADD":20,
-    "B-LDR-CBZ":20
+    "ADRP-ADD-MOV":33,
+    "MOV-MOV-ADRP":17,
+    "ADD-ADRP-ADD":17,
+    "B-LDR-CBZ":17,
+    "ADRP-ADD-STUR":17
   },
   "CALL-AND-MOVZX":{
     "BL-LDR-STR":100
@@ -8139,10 +8246,6 @@
   },
   "MOVSXD-CMP-JE":{
     "LDR-STR-LDUR":100
-  },
-  "AND-MOVZX-ADD":{
-    "LDP-ADD-RET":67,
-    "AND-LDP-ADD":33
   },
   "MOV-CALL-AND":{
     "AND-LDR-TST":67,
@@ -8272,11 +8375,8 @@
   "MOVAPS-PSHUFD-MOVAPS":{
     "BL-LDR-STR":100
   },
-  "SUB-MOV-CALL":{
-    "ADD-MOV-ADRP":33,
-    "LDR-SUBS-BL":33,
-    "ADD-STUR-BL":17,
-    "ADD-MOV-MOV":17
+  "CALL-MOVABS-ADD":{
+    "MOV-STR-STR":100
   },
   "JE-JMP-MOVABS":{
     "CBZ-B-ADRP":67,
@@ -8336,13 +8436,14 @@
     "MOV-BL-MOV":33
   },
   "LEA-ADD-MOV":{
-    "STR-MOV-LDR":22,
-    "ADD-STP-ADD":22,
-    "MOV-MOVK-CMP":11,
-    "STR-MOV-STR":11,
-    "STR-ADD-STR":11,
-    "LDR-LDRSW-MOV":11,
-    "LDR-LDR-CMP":11
+    "STR-MOV-LDR":20,
+    "ADD-STP-ADD":20,
+    "MOV-MOVK-CMP":10,
+    "STR-MOV-STR":10,
+    "STR-ADD-STR":10,
+    "LDR-LDRSW-MOV":10,
+    "LDR-LDR-CMP":10,
+    "BL-LDR-LDR":10
   },
   "POP-JMP-NOP":{
     "STR-BL-MOV":29,
@@ -8630,9 +8731,6 @@
   "SHL-OR-MOV":{
     "MOV-MOV-MOV":100
   },
-  "XOR-MOV-CALL":{
-    "LDP-RET-LDR":100
-  },
   "SHR-JMP-CALL":{
     "MOV-MOV-MOV":100
   },
@@ -8893,6 +8991,11 @@
   "JE-LOCK-JNE":{
     "LDXR-STLXR-CBNZ":67,
     "BL-B-MOV":33
+  },
+  "JMP-XOR-XOR":{
+    "STUR-BL-ADD":50,
+    "STRB-B-LDR":25,
+    "LDR-ADD-STR":25
   },
   "JE-MOV-MOVZX":{
     "ADD-ADRP-ADD":100
@@ -9853,7 +9956,9 @@
     "LDRSW-CMP-CSET":33
   },
   "XOR-ADD-POP":{
-    "LDUR-ADRP-ADD":100
+    "LDUR-ADRP-ADD":33,
+    "LDR-BLR-MOV":33,
+    "STUR-STR-BL":33
   },
   "JLE-MOV-AND":{
     "MOV-STR-LDR":100
@@ -10654,14 +10759,6 @@
     "MOV-MOVK-STR":33,
     "STR-ADD-STR":33
   },
-  "MOV-CMP-SETL":{
-    "STR-STR-STR":17,
-    "MOV-MOVK-STR":17,
-    "B-LDR-ADD":17,
-    "AND-MOV-CMP":17,
-    "LDR-STR-LDR":17,
-    "LDR-LDR-SUB":17
-  },
   "JGE-MOVSXD-MOVABS":{
     "MOV-LDR-BL":25,
     "LDRB-MOV-MOV":25,
@@ -11211,10 +11308,6 @@
   "XOR-MOVSX-OR":{
     "LSL-LDR-AND":50,
     "CSET-AND-LDR":50
-  },
-  "JMP-XOR-XOR":{
-    "STRB-B-LDR":50,
-    "LDR-ADD-STR":50
   },
   "MOVSXD-AND-MOVSX":{
     "CSET-AND-MOV":50,
@@ -12246,9 +12339,6 @@
   "CALL-MOVABS-MOVABS":{
     "STUR-STR-BL":100
   },
-  "CALL-MOVABS-ADD":{
-    "MOV-STR-STR":100
-  },
   "MOV-IMUL-POP":{
     "LDR-MUL-ADD":100
   },
@@ -12663,9 +12753,6 @@
   "CMP-JA-JMP":{
     "LDUR-ADD-LDR":100
   },
-  "MOV-CALL-":{
-    "B-MOV-BL":100
-  },
   "JMP-CALL-NOP":{
     "B.EQ-MOV-MOV":33,
     "LDR-LDP-RET":33,
@@ -12959,14 +13046,10 @@
   "CALLQ-JMPQ-NOPL":{
     "MOV-MOV-SVC":100
   },
-  "CALL-PUSH-MOV":{
-    "BL-STP-LDR":50,
-    "BL-ADRP-LDR":25,
-    "BL-LDR-LDR":25
+  "XOR-CALL-MOV":{
+    "MOV-MUL-LDR":100
   },
-  "MOV-CALL-PUSH":{
-    "MOV-BL-STP":50,
-    "MOV-BL-ADRP":25,
-    "MOV-BL-LDR":25
+  "RET-MOV-JMP":{
+    "STUR-LDUR-LDRSW":100
   }
 }
